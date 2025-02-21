@@ -1,0 +1,13 @@
+prefix=${pcfiledir}/../..
+bindir=${prefix}/bin
+staticlibdir=${prefix}/lib
+sharedlibdir=${prefix}/lib
+includedir=${prefix}/include
+
+Name: @PROJECT_NAME@
+Description: @PROJECT_DESCRIPTION@
+Version: @PROJECT_VERSION@
+
+Requires:
+Libs: -L${bindir} -L${staticlibdir} -L${sharedlibdir} -ltriomino
+Cflags: -I${includedir}
