@@ -1,3 +1,5 @@
+# This is the root CMakeLists file for the Triomino project
+
 cmake_minimum_required(VERSION 3.28)
 
 if(POLICY CMP0110)
@@ -16,7 +18,7 @@ include(GNUInstallDirs)
 include(CPack)
 
 option(BUILD_TESTS "Build the tests" ON)
-option(DEBUG_INSTALL "Enable debug install" ON)
+option(DEBUG_INSTALL "Enable debug install" OFF)
 
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
