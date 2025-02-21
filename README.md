@@ -1,6 +1,6 @@
 # lib-triomino
 
-
+[![Tests](https://github.com/mchasleslr/triomino-lib/actions/workflows/ci.yml/badge.svg)](https://github.com/mchasleslr/triomino-lib/actions/workflows/ci.yml)
 
 C library for creating a simplified version of the Triomino game.
 
