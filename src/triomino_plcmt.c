@@ -6,7 +6,7 @@
  * @copyright  BSD 3-Clause License
  */
 
-#include "placement.h"
+#include "triomino_plcmt.h"
 
 #include <stdlib.h>
 #include <stdio.h>
