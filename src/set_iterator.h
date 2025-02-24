@@ -13,5 +13,6 @@ extern bool set_iterator_has_next(SetIterator *iterator);
 extern SetIterator *set_iterator_next(SetIterator *iterator);
 extern SetIterator *set_iterator_reset(SetIterator *iterator);
 extern void *set_iterator_get(SetIterator *iterator);
+extern unsigned int set_iterator_index(SetIterator *iterator);
 
 #endif // _SET_ITERATOR_H

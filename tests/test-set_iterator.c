@@ -22,7 +22,7 @@
 int main(void)
 {
   assert(sizeof(SetIterator *) == __SIZEOF_POINTER__);
-  assert(sizeof(SetIterator) == 16);
+  assert(sizeof(SetIterator) == 24);
 
   return EXIT_SUCCESS;
 }

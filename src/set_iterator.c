@@ -17,6 +17,7 @@ SetIterator *set_iterator_create(Set *set)
   {
     iterator->set = set;
     iterator->current = set->head;
+    iterator->index = 0;
   }
 
   return iterator;
@@ -41,6 +42,7 @@ SetIterator *set_iterator_next(SetIterator *iterator)
   if (set_iterator_has_next(iterator))
   {
     iterator->current = iterator->current->next;
+    iterator->index++;
   }
   return iterator;
 }
@@ -48,10 +50,16 @@ SetIterator *set_iterator_next(SetIterator *iterator)
 SetIterator *set_iterator_reset(SetIterator *iterator)
 {
   iterator->current = iterator->set->head;
+  iterator->index = 0;
   return iterator;
 }
 
 void *set_iterator_get(SetIterator *iterator)
 {
   return iterator->current->data;
+}
+
+unsigned int set_iterator_index(SetIterator *iterator)
+{
+  return iterator->index;
 }
