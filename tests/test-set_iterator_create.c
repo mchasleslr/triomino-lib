@@ -17,7 +17,7 @@
 #include "set-iterator.h"
 
 #include "set.inc"
-#include "set_iterator.inc"
+#include "set-iterator.inc"
 
 int main(void)
 {
