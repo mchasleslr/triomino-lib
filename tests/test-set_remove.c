@@ -1,8 +1,8 @@
 /**
- * @file       test-plcmt-struct.c
+ * @file       test-set_remove.c
  *
- * @author     Maxime Chasles <mchasles@etudiant.univ-lr.fr>
- * @date       2024
+ * @author     Maxime Chasles
+ * @date       2025
  * @copyright  BSD 3-Clause License
  */
 
