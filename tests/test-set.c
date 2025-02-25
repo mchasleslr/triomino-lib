@@ -21,6 +21,9 @@
 #include "triomino.inc"
 #include "triomino_plcmt.inc"
 
+#define _SIZEOF_SET sizeof(Set)
+#define _SIZEOF_SETNODE sizeof(SetNode)
+
 int main(void)
 {
   assert(sizeof(Set *) == __SIZEOF_POINTER__);

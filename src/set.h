@@ -1,10 +1,15 @@
+/**
+ * @file       set.h
+ *
+ * @author     Maxime Chasles
+ * @date       2025
+ * @copyright  BSD 3-Clause License
+ */
+
 #ifndef _SET_H
 #define _SET_H
 
 #include <stdbool.h>
-
-#define _SIZEOF_SET sizeof(Set)
-#define _SIZEOF_SETNODE sizeof(SetNode)
 
 typedef struct _SetNode SetNode;
 typedef struct _Set Set;

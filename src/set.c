@@ -1,3 +1,11 @@
+/**
+ * @file       set.c
+ *
+ * @author     Maxime Chasles
+ * @date       2025
+ * @copyright  BSD 3-Clause License
+ */
+
 #include "set.h"
 
 #include <stdlib.h>
@@ -5,6 +13,9 @@
 #include <stdbool.h>
 
 #include "set.inc"
+
+#define _SIZEOF_SET sizeof(Set)
+#define _SIZEOF_SETNODE sizeof(SetNode)
 
 Set *set_create()
 {
