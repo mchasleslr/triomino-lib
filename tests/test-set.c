@@ -1,8 +1,8 @@
 /**
- * @file       test-plcmt-struct.c
+ * @file       test-set.c
  *
- * @author     Maxime Chasles <mchasles@etudiant.univ-lr.fr>
- * @date       2024
+ * @author     Maxime Chasles
+ * @date       2025
  * @copyright  BSD 3-Clause License
  */
 
@@ -20,6 +20,9 @@
 #include "set.inc"
 #include "triomino.inc"
 #include "triomino_plcmt.inc"
+
+#define _SIZEOF_SET sizeof(Set)
+#define _SIZEOF_SETNODE sizeof(SetNode)
 
 int main(void)
 {
