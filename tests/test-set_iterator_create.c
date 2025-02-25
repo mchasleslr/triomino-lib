@@ -1,5 +1,5 @@
 /**
- * @file       test-plcmt-struct.c
+ * @file       test-set_iterator_create.c
  *
  * @author     Maxime Chasles <mchasles@etudiant.univ-lr.fr>
  * @date       2024

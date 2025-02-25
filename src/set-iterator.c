@@ -1,3 +1,11 @@
+/**
+ * @file       set-iterator.c
+ *
+ * @author     Maxime Chasles
+ * @date       2025
+ * @copyright  BSD 3-Clause License
+ */
+
 #include "set-iterator.h"
 
 #include <stdlib.h>
