@@ -14,7 +14,7 @@
 #include <assert.h>
 
 #include "set.h"
-#include "set_iterator.h"
+#include "set-iterator.h"
 
 #include "set.inc"
 #include "set_iterator.inc"

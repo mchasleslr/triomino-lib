@@ -15,7 +15,7 @@
 #include <assert.h>
 
 #include "set.h"
-#include "set_iterator.h"
+#include "set-iterator.h"
 #include "triomino.h"
 
 #include "set.inc"

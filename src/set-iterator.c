@@ -1,11 +1,11 @@
-#include "set_iterator.h"
+#include "set-iterator.h"
 
 #include <stdlib.h>
 #include <stdio.h>
 #include <stdbool.h>
 
 #include "set.inc"
-#include "set_iterator.inc"
+#include "set-iterator.inc"
 
 #define _SIZEOF_SET_ITERATOR sizeof(SetIterator)
 
