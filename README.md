@@ -1,4 +1,4 @@
-# lib-triomino
+# triomino-lib
 
 [![Tests](https://github.com/mchasleslr/triomino-lib/actions/workflows/ci.yml/badge.svg)](https://github.com/mchasleslr/triomino-lib/actions/workflows/ci.yml)
 
@@ -56,8 +56,3 @@ $ make package_source
 + [Maxime Chasles](https://github.com/mchasleslr)
 
 + [Christophe Demko](https://github.com/chdemko)
-
-
-
-
-
