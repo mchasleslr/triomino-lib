@@ -16,11 +16,12 @@
 #include "triomino.h"
 #include "triomino.inc"
 
-int main(void) {
+int main(void)
+{
   triomino_init();
   {
-    Triomino* triomino1 = triomino_create_full(1, 2, 3);
-    Triomino* triomino2 = triomino_create_full(1, 1, 2);
+    Triomino *triomino1 = triomino_create_full(1, 2, 3);
+    Triomino *triomino2 = triomino_create_full(1, 1, 2);
     assert(triomino_aa_compatible(triomino1, triomino2) == true);
     assert(triomino_ab_compatible(triomino1, triomino2) == true);
     assert(triomino_ac_compatible(triomino1, triomino2) == false);

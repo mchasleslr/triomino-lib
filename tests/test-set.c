@@ -14,12 +14,8 @@
 #include <assert.h>
 
 #include "set.h"
-#include "triomino.h"
-#include "triomino_plcmt.h"
 
 #include "set.inc"
-#include "triomino.inc"
-#include "triomino_plcmt.inc"
 
 #define _SIZEOF_SET sizeof(Set)
 #define _SIZEOF_SETNODE sizeof(SetNode)

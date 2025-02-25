@@ -16,10 +16,11 @@
 #include "triomino.h"
 #include "triomino.inc"
 
-int main(void) {
+int main(void)
+{
   triomino_init();
   {
-    Triomino* triomino = triomino_create_default();
+    Triomino *triomino = triomino_create_default();
     assert(triomino_get_a(triomino) == 0);
     assert(triomino_get_b(triomino) == 0);
     assert(triomino_get_c(triomino) == 0);

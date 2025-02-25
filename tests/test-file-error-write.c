@@ -17,12 +17,13 @@
 #include "triomino.h"
 #include "triomino.inc"
 
-int main(void) {
+int main(void)
+{
   triomino_init();
   {
-    FILE* stream = fopen("empty", "w");
+    FILE *stream = fopen("empty", "w");
     fclose(stream);
-    Triomino* triomino = triomino_create_full(1, 2, 3);
+    Triomino *triomino = triomino_create_full(1, 2, 3);
     stream = fopen("empty", "r");
     assert(triomino_fwrite(triomino, stream) == NULL);
     fclose(stream);
