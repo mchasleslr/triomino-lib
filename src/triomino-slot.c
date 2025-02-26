@@ -69,3 +69,29 @@ bool triomino_slot_empty(TriominoSlot *slot)
 {
   return slot->tile == NULL;
 }
+
+// TODO: change returns in one line
+
+bool triomino_slot_ymin(TriominoSlot *slot, coord_t y_min)
+{
+  coord_t y = triomino_slot_get_y(slot);
+  return y == y_min;
+}
+
+bool triomino_slot_ymax(TriominoSlot *slot, coord_t y_max)
+{
+  coord_t y = triomino_slot_get_y(slot);
+  return y == y_max - 1;
+}
+
+bool triomino_slot_xmin(TriominoSlot *slot, coord_t x_min)
+{
+  coord_t x = triomino_slot_get_y(slot);
+  return x == x_min;
+}
+
+bool triomino_slot_xmax(TriominoSlot *slot, coord_t x_max)
+{
+  coord_t x = triomino_slot_get_x(slot);
+  return x == x_max - 1;
+}
