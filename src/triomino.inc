@@ -1,5 +1,9 @@
 /**
  * @file       triomino.inc
+ *                  ___
+ *             a  a     b  c
+ *           /   \ \   / /   \
+ *          c ___ b  c  b ___ a
  *
  * @author     Maxime Chasles
  * @date       2024-2025
@@ -17,8 +21,8 @@ struct _Triomino
 
 struct _TriominoTile
 {
-  unsigned char player_id;
   struct _Triomino *triomino;
+  id_t player_id;
   rot_t rotation;
 };
 

@@ -1,4 +1,4 @@
-file(GLOB TEST_SOURCES "test-tile*.c")
+file(GLOB TEST_SOURCES "triomino-slot/test-*.c")
 
 foreach(TEST_SOURCE ${TEST_SOURCES})
   get_filename_component(TEST_NAME ${TEST_SOURCE} NAME_WE)
