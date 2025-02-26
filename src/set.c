@@ -81,7 +81,7 @@ bool set_contains(Set *set, void *element)
 
 Set *set_add(Set *set, void *element)
 {
-  if (set_contains(set, element))
+  if (set_contains(set, element) || element == NULL)
   {
     return set;
   }
