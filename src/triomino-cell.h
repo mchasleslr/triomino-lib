@@ -10,11 +10,10 @@
 #define _TRIOMINO_CELL_H
 
 #include "triomino-types.h"
-#include "triomino-tile.h"
 
 typedef struct _TriominoCell TriominoCell;
 
-extern TriominoCell *triomino_cell_create_empty();
+extern TriominoCell *triomino_cell_create();
 extern void triomino_cell_destroy(TriominoCell *cell);
 
 #endif // _TRIOMINO_CELL_H

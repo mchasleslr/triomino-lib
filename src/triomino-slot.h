@@ -23,6 +23,9 @@ extern coord_t triomino_slot_get_x(TriominoSlot *slot);
 extern coord_t triomino_slot_get_y(TriominoSlot *slot);
 extern edge_t triomino_slot_get_edge(TriominoSlot *slot);
 
+extern bool triomino_slot_on_inf_edge(TriominoSlot *s);
+extern bool triomino_slot_on_sup_edge(TriominoSlot *s);
+
 extern bool triomino_slot_empty(TriominoSlot *slot);
 
 extern bool triomino_slot_ymin(TriominoSlot *slot, coord_t y_min);

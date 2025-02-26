@@ -12,12 +12,13 @@
 #include <stdio.h>
 
 #include "triomino-types.h"
+#include "triomino-slot.h"
 #include "triomino-cell.h"
 #include "set.h"
 
 #include "triomino.inc"
 
-TriominoGrid *triomino_grid_create_full(unsigned int width, unsigned int height)
+TriominoGrid *triomino_grid_create(unsigned int width, unsigned int height)
 {
   TriominoGrid *grid;
 
@@ -33,7 +34,7 @@ TriominoGrid *triomino_grid_create_full(unsigned int width, unsigned int height)
 
 TriominoGrid *triomino_grid_init(unsigned int width, unsigned int height)
 {
-  TriominoGrid *grid = triomino_grid_create_full(width, height);
+  TriominoGrid *grid = triomino_grid_create(width, height);
 
   if (grid == NULL)
   {
@@ -50,7 +51,7 @@ TriominoGrid *triomino_grid_init(unsigned int width, unsigned int height)
 
     for (j = GRID_XMIN; j < width; j++)
     {
-      grid->cells[i][j] = triomino_cell_create_empty();
+      grid->cells[i][j] = triomino_cell_create();
     }
   }
 
@@ -75,57 +76,55 @@ void triomino_grid_destroy(TriominoGrid *grid)
   free(grid);
 }
 
-TriominoTile *triomino_grid_put_tile(TriominoGrid *grid, Triomino *triomino, id_t player_id, coord_t x, coord_t y, slot_t slot, rot_t rotation, TriominoTile *prev_played)
+TriominoTile *triomino_grid_insert_tile(TriominoGrid *grid, TriominoTile *tile, coord_t x, coord_t y, edge_t edge)
 {
-  TriominoPos *pos = triomino_pos_create_full(x, y, slot, rotation);
-  TriominoTile *tile = triomino_tile_create_full(player_id, pos, prev_played, triomino);
-  triomino_cell_set_tile(grid->cells[y][x], slot, tile);
+  grid->cells[y][x]->slots[edge] = tile;
+
   return tile;
 }
 
-TriominoTile *triomino_grid_get_tile(TriominoGrid *grid, coord_t x, coord_t y, slot_t slot)
+TriominoTile *triomino_grid_get_tile(TriominoGrid *grid, coord_t x, coord_t y, edge_t edge)
 {
-  return grid->cells[y][x]->tiles[slot];
+  return grid->cells[y][x]->slots[edge];
 }
 
-TriominoTile *triomino_grid_get_tile_above(TriominoGrid *grid, TriominoTile *tile)
+TriominoSlot *triomino_grid_get_slot_above(TriominoGrid *grid, TriominoSlot *slot)
 {
-  TriominoTile *tile_above = NULL;
+  TriominoSlot *s_above = NULL;
 
-  if (tile)
+  if (slot)
   {
-    coord_t x = triomino_tile_get_x(tile);
-    coord_t y = triomino_tile_get_y(tile);
+    coord_t x = triomino_slot_get_x(slot);
+    coord_t y = triomino_slot_get_y(slot);
 
-    if (triomino_tile_on_bottom_slot(tile))
+    if (triomino_slot_on_inf_edge(slot))
     {
-      tile_above = triomino_grid_get_tile(grid, x, y, SLOT_TOP);
+      s_above = triomino_grid_get_tile(grid, x, y, EDGE_SUP);
     }
-    else if (triomino_tile_on_top_slot(tile) && !triomino_tile_ymin(tile, GRID_YMIN))
+    else if (triomino_slot_on_sup_edge(slot) && !triomino_slot_ymin(slot, GRID_YMIN))
     {
-      tile_above = triomino_grid_get_tile(grid, x, y - 1, SLOT_BOTTOM);
+      s_above = triomino_grid_get_tile(grid, x, y - 1, EDGE_INF);
     }
   }
 
-  return tile_above;
+  return s_above;
 }
 
-TriominoTile *triomino_grid_get_tile_below(TriominoGrid *grid, TriominoTile *tile)
+TriominoTile *triomino_grid_get_slot_below(TriominoGrid *grid, TriominoSlot *slot)
 {
-  TriominoTile *tile_below = NULL;
-
-  if (tile)
+  TriominoTile *s_below = NULL;
+  if (slot)
   {
-    coord_t x = triomino_tile_get_x(tile);
-    coord_t y = triomino_tile_get_y(tile);
+    coord_t x = triomino_slot_get_x(slot);
+    coord_t y = triomino_slot_get_y(slot);
 
-    if (triomino_tile_on_top_slot(tile))
+    if (triomino_slot_on_sup_edge(slot))
     {
-      tile_below = triomino_grid_get_tile(grid, x, y, SLOT_BOTTOM);
+      s_below = triomino_grid_get_tile(grid, x, y, SLOT_BOTTOM);
     }
     else if (triomino_tile_on_bottom_slot(tile) && !triomino_tile_ymax(tile, grid->height))
     {
-      tile_below = triomino_grid_get_tile(grid, x, y + 1, SLOT_TOP);
+      s_below = triomino_grid_get_tile(grid, x, y + 1, SLOT_TOP);
     }
   }
 

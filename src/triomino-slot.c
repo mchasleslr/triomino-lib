@@ -45,6 +45,16 @@ void triomino_slot_destroy(TriominoSlot *slot)
   free(slot);
 }
 
+bool triomino_slot_on_inf_edge(TriominoSlot *s)
+{
+  return s->edge == EDGE_INF;
+}
+
+bool triomino_slot_on_sup_edge(TriominoSlot *s)
+{
+  return s->edge == EDGE_SUP;
+}
+
 TriominoTile *triomino_slot_get_tile(TriominoSlot *slot)
 {
   return slot->tile;

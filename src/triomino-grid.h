@@ -21,11 +21,11 @@
 
 typedef struct _TriominoGrid TriominoGrid;
 
-extern TriominoGrid *triomino_grid_create_full(unsigned int width, unsigned int height);
+extern TriominoGrid *triomino_grid_create(unsigned int width, unsigned int height);
 extern TriominoGrid *triomino_grid_init(unsigned int width, unsigned int height);
 extern void triomino_grid_destroy(TriominoGrid *grid);
-extern TriominoTile *triomino_grid_put_tile(TriominoGrid *grid, Triomino *triomino, id_t player_id, coord_t x, coord_t y, slot_t slot, rot_t rotation, TriominoTile *prev_played);
-extern TriominoTile *triomino_grid_get_tile(TriominoGrid *grid, coord_t x, coord_t y, slot_t slot);
+extern TriominoTile *triomino_grid_put_tile(TriominoGrid *grid, Triomino *triomino, unsigned int player_id, coord_t x, coord_t y, edge_t slot, rot_t rotation, TriominoTile *prev_played);
+extern TriominoTile *triomino_grid_get_tile(TriominoGrid *grid, coord_t x, coord_t y, edge_t slot);
 
 extern TriominoTile *triomino_grid_get_tile_above(TriominoGrid *grid, TriominoTile *tile);
 extern TriominoTile *triomino_grid_get_tile_below(TriominoGrid *grid, TriominoTile *tile);

@@ -15,7 +15,7 @@
 
 #include "triomino.inc"
 
-TriominoTile *triomino_tile_create_full(Triomino *triomino, id_t player_id, rot_t rotation)
+TriominoTile *triomino_tile_create_full(Triomino *triomino, unsigned int player_id, rot_t rotation)
 {
   TriominoTile *tile;
 
@@ -37,7 +37,7 @@ void triomino_tile_destroy(TriominoTile *tile)
   free(tile);
 }
 
-id_t triomino_tile_get_player_id(TriominoTile *tile)
+unsigned int triomino_tile_get_player_id(TriominoTile *tile)
 {
   return tile->player_id;
 }

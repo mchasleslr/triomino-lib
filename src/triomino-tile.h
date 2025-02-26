@@ -14,9 +14,9 @@
 
 typedef struct _TriominoTile TriominoTile;
 
-extern TriominoTile *triomino_tile_create_full(Triomino *triomino, id_t player_id, rot_t rotation);
+extern TriominoTile *triomino_tile_create_full(Triomino *triomino, unsigned int player_id, rot_t rotation);
 extern void triomino_tile_destroy(TriominoTile *tile);
-extern id_t triomino_tile_get_player_id(TriominoTile *tile);
+extern unsigned int triomino_tile_get_player_id(TriominoTile *tile);
 extern rot_t triomino_tile_get_rotation(TriominoTile *tile);
 extern Triomino *triomino_tile_get_triomino(TriominoTile *tile);
 

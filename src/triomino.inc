@@ -22,7 +22,7 @@ struct _Triomino
 struct _TriominoTile
 {
   struct _Triomino *triomino;
-  id_t player_id;
+  unsigned int player_id;
   rot_t rotation;
 };
 

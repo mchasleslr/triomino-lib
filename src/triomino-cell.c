@@ -12,17 +12,18 @@
 #include <stdio.h>
 
 #include "triomino-types.h"
+#include "triomino-slot.h"
 
 #include "triomino.inc"
 
-TriominoCell *triomino_cell_create_empty()
+TriominoCell *triomino_cell_create()
 {
   TriominoCell *cell;
 
   if (NULL != (cell = malloc(sizeof(TriominoCell))))
   {
-    cell->tiles[0] = NULL;
-    cell->tiles[1] = NULL;
+    cell->slots[EDGE_INF] = NULL;
+    cell->slots[EDGE_SUP] = NULL;
   }
 
   return cell;
@@ -30,13 +31,13 @@ TriominoCell *triomino_cell_create_empty()
 
 void triomino_cell_destroy(TriominoCell *cell)
 {
-  if (cell->tiles[0])
+  if (cell->slots[EDGE_INF])
   {
-    triomino_tile_destroy(cell->tiles[0]);
+    triomino_slot_destroy(cell->slots[EDGE_INF]);
   }
-  if (cell->tiles[1])
+  if (cell->slots[EDGE_SUP])
   {
-    triomino_tile_destroy(cell->tiles[1]);
+    triomino_slot_destroy(cell->slots[EDGE_SUP]);
   }
 
   free(cell);
