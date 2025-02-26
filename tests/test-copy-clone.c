@@ -16,17 +16,18 @@
 #include "triomino.h"
 #include "triomino.inc"
 
-int main(void) {
+int main(void)
+{
   triomino_init();
   {
-    Triomino* triomino = triomino_create_full(1, 2, 3);
+    Triomino *triomino = triomino_create_full(1, 2, 3);
 
-    Triomino* clone = triomino_clone(triomino);
+    Triomino *clone = triomino_clone(triomino);
     assert(triomino->a == clone->a);
     assert(triomino->b == clone->b);
     assert(triomino->c == clone->c);
 
-    Triomino* copy = triomino_create_default();
+    Triomino *copy = triomino_create_default();
     assert(triomino_copy(copy, triomino) == copy);
     assert(triomino->a == copy->a);
     assert(triomino->b == copy->b);

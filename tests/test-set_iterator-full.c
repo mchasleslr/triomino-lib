@@ -15,11 +15,9 @@
 #include <assert.h>
 
 #include "set.h"
-#include "set-iterator.h"
 #include "triomino.h"
 
 #include "set.inc"
-#include "set-iterator.inc"
 
 int main(void)
 {

@@ -16,6 +16,7 @@
 
 #define _SIZEOF_SET sizeof(Set)
 #define _SIZEOF_SETNODE sizeof(SetNode)
+#define _SIZEOF_SET_ITERATOR sizeof(SetIterator)
 
 Set *set_create()
 {
@@ -80,7 +81,7 @@ bool set_contains(Set *set, void *element)
 
 Set *set_add(Set *set, void *element)
 {
-  if (set_contains(set, element))
+  if (set_contains(set, element) || element == NULL)
   {
     return set;
   }
@@ -154,4 +155,59 @@ unsigned int set_size(Set *set)
   }
 
   return size;
+}
+
+SetIterator *set_iterator_create(Set *set)
+{
+  SetIterator *iterator;
+
+  if (NULL != (iterator = malloc(_SIZEOF_SET_ITERATOR)))
+  {
+    iterator->set = set;
+    iterator->current = set->head;
+    iterator->index = 0;
+  }
+
+  return iterator;
+}
+
+void set_iterator_destroy(SetIterator *iterator)
+{
+  if (iterator)
+  {
+    set_destroy(iterator->set);
+    free(iterator);
+  }
+}
+
+bool set_iterator_has_next(SetIterator *iterator)
+{
+  return NULL != iterator->current;
+}
+
+SetIterator *set_iterator_next(SetIterator *iterator)
+{
+  if (set_iterator_has_next(iterator))
+  {
+    iterator->current = iterator->current->next;
+    iterator->index++;
+  }
+  return iterator;
+}
+
+SetIterator *set_iterator_reset(SetIterator *iterator)
+{
+  iterator->current = iterator->set->head;
+  iterator->index = 0;
+  return iterator;
+}
+
+void *set_iterator_get(SetIterator *iterator)
+{
+  return iterator->current->data;
+}
+
+unsigned int set_iterator_index(SetIterator *iterator)
+{
+  return iterator->index;
 }

@@ -1,5 +1,5 @@
 /**
- * @file       test-set_create.c
+ * @file       test-cell.c
  *
  * @author     Maxime Chasles
  * @date       2025
@@ -13,17 +13,14 @@
 #endif
 #include <assert.h>
 
-#include "set.h"
+#include "triomino-cell.h"
 
-#include "set.inc"
+#include "triomino.inc"
 
 int main(void)
 {
-  Set *set = set_create();
-
-  assert("" && set->head == NULL);
-
-  free(set);
+  assert("" && sizeof(TriominoCell *) == __SIZEOF_POINTER__);
+  assert("" && sizeof(TriominoCell) == 16);
 
   return EXIT_SUCCESS;
 }

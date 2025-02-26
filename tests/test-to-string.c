@@ -17,10 +17,11 @@
 #include "triomino.h"
 #include "triomino.inc"
 
-int main(void) {
+int main(void)
+{
   triomino_init();
   {
-    Triomino* triomino = triomino_create_full(1, 2, 3);
+    Triomino *triomino = triomino_create_full(1, 2, 3);
     assert(strcmp(triomino_to_string(triomino), "1-2-3") == 0);
     triomino_destroy(triomino);
   }
