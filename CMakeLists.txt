@@ -40,6 +40,8 @@ if(${BUILD_TESTS})
   add_subdirectory(tests)
 endif()
 
+add_subdirectory(examples)
+
 if (${DEBUG_INSTALL})
   message(STATUS "Debug install enabled")
   set(CMAKE_INSTALL_PREFIX "${CMAKE_BINARY_DIR}/install" CACHE PATH "Install path" FORCE)
