@@ -6,25 +6,7 @@
  * @copyright  BSD 3-Clause License
  */
 
-enum _rotation_t
-{
-  ROT_45,
-  ROT_135,
-  ROT_225,
-  ROT_270
-};
-
-enum _slot_t
-{
-  SLOT_BOTTOM,
-  SLOT_TOP
-};
-
-struct _coords_t
-{
-  unsigned int x;
-  unsigned int y;
-};
+#include "types.h"
 
 struct _Triomino
 {
@@ -35,9 +17,9 @@ struct _Triomino
 
 struct _TriominoPos
 {
-  struct _coords_t coords;
-  enum _rotation_t rotation;
+  unsigned int coords[2];
   enum _slot_t slot;
+  enum _rot_t rotation;
 };
 
 struct _TriominoPlayer
@@ -50,9 +32,9 @@ struct _TriominoPlayer
 struct _TriominoTile
 {
   unsigned int player_id;
-  struct _Triomino *triomino;
   struct _TriominoPos *pos;
-  struct _TriominoTile *prev;
+  struct _Triomino *triomino;
+  struct _TriominoTile *prev_played;
 };
 
 struct _TriominoCell
@@ -62,7 +44,7 @@ struct _TriominoCell
 
 struct _TriominoGrid
 {
-  struct _TriominoCell **cells;
+  struct _TriominoCell ***cells;
   unsigned int width;
   unsigned int height;
 };
