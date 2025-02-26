@@ -11,7 +11,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-#include "types.h"
+#include "triomino-types.h"
 #include "triomino-cell.h"
 #include "set.h"
 

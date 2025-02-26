@@ -12,7 +12,7 @@
 #include <stdbool.h>
 
 #include "set.h"
-#include "types.h"
+#include "triomino-types.h"
 #include "triomino.h"
 #include "triomino-tile.h"
 
