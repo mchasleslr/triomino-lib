@@ -1,8 +1,8 @@
 /**
  * @file       triomino.c
  *
- * @author     Christophe Demko <christophe.demko@univ-lr.fr>
- * @date       2024
+ * @author     Maxime Chasles
+ * @date       2024-2025
  * @copyright  BSD 3-Clause License
  */
 
@@ -116,6 +116,27 @@ Triomino *triomino_clone(const Triomino *triomino)
 Triomino *triomino_copy(Triomino *dest, const Triomino *src)
 {
   return triomino_fill_full(dest, src->a, src->b, src->c);
+}
+
+bool triomino_is_triple(const Triomino *triomino)
+{
+  return triomino->a == triomino->b && triomino->b == triomino->c;
+}
+
+bool triomino_is_double(const Triomino *triomino)
+{
+  return (triomino->a == triomino->b && triomino->b != triomino->c) ||
+         (triomino->a != triomino->b && triomino->b == triomino->c);
+}
+
+bool triomino_is_single(const Triomino *triomino)
+{
+  return triomino->a != triomino->b && triomino->b != triomino->c;
+}
+
+unsigned char triomino_get_value(const Triomino *triomino)
+{
+  return triomino->a + triomino->b + triomino->c;
 }
 
 bool triomino_aa_compatible(const Triomino *triomino1, const Triomino *triomino2)

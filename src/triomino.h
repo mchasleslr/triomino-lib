@@ -1,8 +1,8 @@
 /**
  * @file       triomino.h
  *
- * @author     Christophe Demko <christophe.demko@univ-lr.fr>
- * @date       2024
+ * @author     Maxime Chasles
+ * @date       2024-2025
  * @copyright  BSD 3-Clause License
  */
 
@@ -118,6 +118,41 @@ extern Triomino *triomino_clone(const Triomino *triomino);
  * @return The destination triomino.
  */
 extern Triomino *triomino_copy(Triomino *dest, const Triomino *src);
+
+// TODO: Add the documentation of the following functions.
+
+/**
+ * @brief Check if a triomino is a triple.
+ * @param triomino The triomino.
+ * @return true if the triomino is a triple, false otherwise.
+ * @note A triomino is a triple if all its corners have the same value.
+ */
+extern bool triomino_is_triple(const Triomino *triomino);
+
+/**
+ * @brief Check if a triomino is a double.
+ * @param triomino The triomino.
+ * @return true if the triomino is a double, false otherwise.
+ * @note A triomino is a double if two of its corners have the same value.
+ * @example 2-2-3 or 1-2-2
+ */
+extern bool triomino_is_double(const Triomino *triomino);
+
+/**
+ * @brief Check if a triomino is a single.
+ * @param triomino The triomino.
+ * @return true if the triomino is a single, false otherwise.
+ * @note A triomino is a single if all its corners have different values.
+ */
+extern bool triomino_is_single(const Triomino *triomino);
+
+/**
+ * @brief Get the value of a triomino.
+ * @param triomino The triomino.
+ * @return The value of the triomino.
+ * @note The value of a triomino is the sum of the values of its corners.
+ */
+extern unsigned char triomino_get_value(const Triomino *triomino);
 
 /**
  * @brief Check if two triominos are aa compatible.
