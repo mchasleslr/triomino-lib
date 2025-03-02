@@ -157,6 +157,33 @@ unsigned int set_size(Set *set)
   return size;
 }
 
+Set *set_filter(Set *set, bool (*filter)(void *))
+{
+  SetIterator *iterator;
+  Set *to_remove = set_create();
+
+  for (iterator = set_iterator_create(set); set_iterator_has_next(iterator); iterator = set_iterator_next(iterator))
+  {
+    void *element = set_iterator_get(iterator);
+
+    if (!filter(element))
+    {
+      set_add(to_remove, element);
+    }
+  }
+  free(iterator);
+
+  for (iterator = set_iterator_create(to_remove); set_iterator_has_next(iterator); iterator = set_iterator_next(iterator))
+  {
+    void *element = set_iterator_get(iterator);
+    set = set_remove(set, element);
+  }
+  free(iterator);
+  set_destroy(to_remove);
+
+  return set;
+}
+
 SetIterator *set_iterator_create(Set *set)
 {
   SetIterator *iterator;
