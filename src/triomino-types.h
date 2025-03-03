@@ -1,25 +1,40 @@
+/**
+ * @file       triomino-types.h
+ *
+ * @author     Maxime Chasles
+ * @date       2024
+ * @copyright  BSD 3-Clause License
+ */
+
 #ifndef _TRIOMINO_TYPES_H
 #define _TRIOMINO_TYPES_H
 
+// ----------------------------------------------------------------------------
+
+#include <stdint.h>
+
 #include "set.h"
 
-typedef unsigned int coord_t;
-typedef enum _rot_t rot_t;
-typedef enum _edge_t edge_t;
+// ----------------------------------------------------------------------------
+
+/**
+ * @brief Alias for a set of triominos.
+ */
 typedef Set TriominoSet;
 
-enum _rot_t
-{
-  R_45,
-  R_135,
-  R_225,
-  R_270,
-};
+/**
+ * @brief Alias for an edge of a slot.
+ */
+typedef uint8_t edge_t;
 
-enum _edge_t
-{
-  EDGE_INF,
-  EDGE_SUP
-};
+/**
+ * @brief An alias for a rotation.
+ */
+typedef uint8_t rotation_t;
+
+/**
+ * @brief An 8-bit flags for general purpose.
+ */
+typedef uint8_t flags8_t;
 
 #endif // _TRIOMINO_TYPES_H
