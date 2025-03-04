@@ -2,6 +2,9 @@
 .idea/
 .vscode/
 
+# Drafts directories
+drafts/
+
 # Compile directories
 bin/
 build/
