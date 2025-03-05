@@ -10,8 +10,6 @@
  * @copyright  BSD 3-Clause License
  */
 
-#include "triomino-types.h"
-
 /**
  * @brief Triomino type.
  *
@@ -22,41 +20,6 @@ struct _Triomino
   unsigned char a;
   unsigned char b;
   unsigned char c;
-};
-
-/**
- * @brief Triomino tile type.
- *
- * @details A triomino tile is a triomino associated to a player and a rotation.
- */
-struct _TriominoTile
-{
-  struct _Triomino *triomino;
-  unsigned int player_id;
-  rotation_t rotation;
-};
-
-// TODO: add an <adjacent_slots> member ??
-/**
- * @brief Triomino slot type.
- *
- * @details A triomino slot is a slot on the grid that can contain a tile.
- */
-struct _TriominoSlot
-{
-  unsigned int coord[2];
-  edge_t edge;
-  struct _TriominoTile *tile;
-};
-
-/**
- * @brief Triomino cell type.
- *
- * @details A triomino cell is a container for two slots.
- */
-struct _TriominoCell
-{
-  struct _TriominoSlot *slots[2];
 };
 
 /**
@@ -71,7 +34,7 @@ struct _TriominoGrid
   struct _TriominoCell ***cells;
 };
 
-struct _TriominoCompatibilityCtx
+struct _TriominoCompatibility
 {
-  bool (*compatibility_strategy)(const Triomino *, const Triomino *);
+  bool (*strategy)(const Triomino *, const Triomino *);
 };
