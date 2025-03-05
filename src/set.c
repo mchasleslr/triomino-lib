@@ -186,6 +186,11 @@ Set *set_filter(Set *set, bool (*filter)(void *))
 
 SetIterator *set_iterator_create(Set *set)
 {
+  if (!set)
+  {
+    return NULL;
+  }
+
   SetIterator *iterator;
 
   if (NULL != (iterator = malloc(_SIZEOF_SET_ITERATOR)))
@@ -200,15 +205,15 @@ SetIterator *set_iterator_create(Set *set)
 
 void set_iterator_destroy(SetIterator *iterator)
 {
-  if (iterator)
-  {
-    set_destroy(iterator->set);
-    free(iterator);
-  }
+  free(iterator);
 }
 
 bool set_iterator_has_next(SetIterator *iterator)
 {
+  if (!iterator)
+  {
+    return false;
+  }
   return NULL != iterator->current;
 }
 

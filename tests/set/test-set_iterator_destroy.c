@@ -27,6 +27,7 @@ int main(void)
   assert("" && iterator->set == set);
 
   set_iterator_destroy(iterator);
+  set_destroy(set);
 
   return EXIT_SUCCESS;
 }
