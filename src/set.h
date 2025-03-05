@@ -106,6 +106,14 @@ extern bool set_empty(Set *set);
 extern Set *set_clear(Set *set);
 
 /**
+ * @brief Filter a set with a given function.
+ *
+ * @param set The set to filter.
+ * @param filter The filter function.
+ */
+extern Set *set_filter(Set *set, bool (*filter)(void *));
+
+/**
  * @brief Create a set iterator.
  *
  * @param set The set to iterate over.

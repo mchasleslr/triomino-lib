@@ -53,6 +53,7 @@ int main(void)
   }
 
   set_iterator_destroy(iterator);
+  set_destroy(set);
   triomino_destroy(t1);
   triomino_destroy(t2);
   triomino_destroy(t3);

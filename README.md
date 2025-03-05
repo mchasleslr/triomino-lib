@@ -19,8 +19,8 @@ $ git clone git@github.com:mchasleslr/triomino-lib.git
 ### Build
 
 ```bash
-$ mkdir build
-$ cd build
+$ mkdir <build | debug | release>
+$ cd <build | debug | release>
 $ cmake .. \
   -DBUILD_TESTS=<ON | OFF>
   -DCMAKE_INSTALL_PREFIX=<path/to/install>
@@ -31,6 +31,8 @@ $ make
 ### Run tests
 
 ```bash
+$ cd <build | debug | release>
+$ cd tests
 $ make test
 ```
 
@@ -54,5 +56,3 @@ $ make package_source
 ## Authors
 
 + [Maxime Chasles](https://github.com/mchasleslr)
-
-+ [Christophe Demko](https://github.com/chdemko)
