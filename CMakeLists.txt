@@ -9,7 +9,7 @@ endif()
 project(
   Triomino
   VERSION 1.0.0
-  DESCRIPTION "A Triominoes library"
+  DESCRIPTION "C library for creating a simplified version of the Triomino game."
   LANGUAGES C
   )
 
