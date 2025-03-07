@@ -134,7 +134,6 @@ extern bool triomino_is_triple(const Triomino *triomino);
  * @param triomino The triomino.
  * @return true if the triomino is a double, false otherwise.
  * @note A triomino is a double if two of its corners have the same value.
- * @example 2-2-3 or 1-2-2
  */
 extern bool triomino_is_double(const Triomino *triomino);
 
