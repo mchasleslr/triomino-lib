@@ -1,5 +1,5 @@
 /**
- * @file       test-set_add_set.c
+ * @file       test-set_merge.c
  *
  * @author     Maxime Chasles
  * @date       2025
@@ -12,12 +12,12 @@
 #include "test-config.h"
 #include "set.h"
 
-static void test_set_add_set_empty_sets(void)
+static void test_set_merge_empty_sets(void)
 {
   Set *dest = set_create();
   Set *src = set_create();
 
-  Set *result = set_add_set(dest, src);
+  Set *result = set_merge(dest, src);
 
   assert(set_empty(result));
   assert(result == dest);
@@ -25,14 +25,14 @@ static void test_set_add_set_empty_sets(void)
   set_destroy(result);
 }
 
-static void test_set_add_set_empty_source(void)
+static void test_set_merge_empty_source(void)
 {
   Set *dest = set_create();
   Set *src = set_create();
   int val = 42;
 
   set_add(dest, &val);
-  Set *result = set_add_set(dest, src);
+  Set *result = set_merge(dest, src);
 
   assert(set_size(result) == 1);
   assert(set_contains(result, &val));
@@ -41,14 +41,14 @@ static void test_set_add_set_empty_source(void)
   set_destroy(result);
 }
 
-static void test_set_add_set_empty_dest(void)
+static void test_set_merge_empty_dest(void)
 {
   Set *dest = set_create();
   Set *src = set_create();
   int val = 42;
 
   set_add(src, &val);
-  Set *result = set_add_set(dest, src);
+  Set *result = set_merge(dest, src);
 
   assert(set_size(result) == 1);
   assert(set_contains(result, &val));
@@ -57,7 +57,7 @@ static void test_set_add_set_empty_dest(void)
   set_destroy(result);
 }
 
-static void test_set_add_set_with_duplicates(void)
+static void test_set_merge_with_duplicates(void)
 {
   Set *dest = set_create();
   Set *src = set_create();
@@ -68,7 +68,7 @@ static void test_set_add_set_with_duplicates(void)
   set_add(src, &val1); // Duplicate
   set_add(src, &val2);
 
-  Set *result = set_add_set(dest, src);
+  Set *result = set_merge(dest, src);
 
   assert(set_size(result) == 2);
   assert(set_contains(result, &val1));
@@ -78,7 +78,7 @@ static void test_set_add_set_with_duplicates(void)
   set_destroy(result);
 }
 
-static void test_set_add_set_multiple_elements(void)
+static void test_set_merge_multiple_elements(void)
 {
   Set *dest = set_create();
   Set *src = set_create();
@@ -88,7 +88,7 @@ static void test_set_add_set_multiple_elements(void)
   set_add(src, &val2);
   set_add(src, &val3);
 
-  Set *result = set_add_set(dest, src);
+  Set *result = set_merge(dest, src);
 
   assert(set_size(result) == 3);
   assert(set_contains(result, &val1));
@@ -101,10 +101,10 @@ static void test_set_add_set_multiple_elements(void)
 
 int main(void)
 {
-  RUN_TEST(test_set_add_set_empty_sets);
-  RUN_TEST(test_set_add_set_empty_source);
-  RUN_TEST(test_set_add_set_empty_dest);
-  RUN_TEST(test_set_add_set_with_duplicates);
-  RUN_TEST(test_set_add_set_multiple_elements);
+  RUN_TEST(test_set_merge_empty_sets);
+  RUN_TEST(test_set_merge_empty_source);
+  RUN_TEST(test_set_merge_empty_dest);
+  RUN_TEST(test_set_merge_with_duplicates);
+  RUN_TEST(test_set_merge_multiple_elements);
   return EXIT_SUCCESS;
 }
