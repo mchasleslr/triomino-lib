@@ -64,6 +64,19 @@ extern void set_destroy(Set *set);
 extern Set *set_add(Set *set, void *element);
 
 /**
+ * @brief Merge two sets.
+ *
+ * @details Add all elements of the source set to the destination set.
+ *
+ * @note The source set is destroyed.
+ *
+ * @param dest The set to merge into.
+ * @param src The set to merge from.
+ * @return The set after the merge.
+ */
+extern Set *set_merge(Set *dest, Set *src);
+
+/**
  * @brief Remove an element from a set.
  *
  * @param set The set to remove the element from.

@@ -97,6 +97,19 @@ Set *set_add(Set *set, void *element)
   return set;
 }
 
+Set *set_merge(Set *dest, Set *src)
+{
+  SetIterator *it;
+  for (it = set_iterator_create(src); set_iterator_has_next(it); it = set_iterator_next(it))
+  {
+    set_add(dest, set_iterator_get(it));
+  }
+  set_destroy(src);
+  set_iterator_destroy(it);
+
+  return dest;
+}
+
 Set *set_remove(Set *set, void *element)
 {
   if (set_empty(set))
