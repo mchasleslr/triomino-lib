@@ -10,11 +10,6 @@
  * @copyright  BSD 3-Clause License
  */
 
-/**
- * @brief Triomino type.
- *
- * @details A triomino is a tile composed of three numbers.
- */
 struct _Triomino
 {
   unsigned char a;
@@ -22,19 +17,30 @@ struct _Triomino
   unsigned char c;
 };
 
-/**
- * @brief Triomino grid type.
- *
- * @details A triomino grid is a grid of cells.
- */
-struct _TriominoGrid
+struct _TPlacement
 {
-  unsigned int width;
-  unsigned int height;
-  struct _TriominoCell ***cells;
+  unsigned int id;
+  unsigned int coords[3];
+  unsigned char rotation;
+  unsigned char player_id;
+  struct _Triomino *triomino;
 };
 
-struct _TriominoCompatibility
+struct _TGrid
 {
-  bool (*strategy)(const Triomino *, const Triomino *);
+  unsigned int size;
+  struct _TPlacement ***placements;
+};
+
+struct _TCompatibility
+{
+  struct _Triomino *ref;
+  bool (*strategy)(const struct _Triomino *, const struct _Triomino *);
+};
+
+struct _TAdjacencyFinder
+{
+  struct _TGrid *grid;
+  struct _TPlacement *ref;
+  struct _TPlacement *(*strategy)(struct _TGrid *, unsigned int, unsigned int, unsigned char);
 };
