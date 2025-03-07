@@ -13,19 +13,19 @@ project(
   LANGUAGES C
   )
 
+set(CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake")
+
 include(CMakePackageConfigHelpers)
 include(GNUInstallDirs)
 include(CPack)
+include(Doxygen)
 
-option(BUILD_TESTS "Build the tests" ON)
-option(DEBUG_INSTALL "Enable debug install" OFF)
 
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 set(CMAKE_C_STANDARD 11)
 set(CMAKE_C_FLAGS "-Wall -Wextra -std=c11")
 
-set(CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake")
 set(CMAKE_SOURCE_DIR "${CMAKE_CURRENT_SOURCE_DIR}/src")
 
 set(CPACK_GENERATOR "ZIP")
