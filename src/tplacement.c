@@ -24,28 +24,6 @@
 
 static unsigned int t_placement_count = 0;
 
-// const char *rot_abs_map[] = {
-//     "UNDEFINED",
-//     "ROT_ABS_A",
-//     "ROT_ABS_B",
-//     "ROT_ABS_C"};
-
-// const char *pos_rel_map[] = {
-//     "UNDEFINED",
-//     "POS_REL_SXY",
-//     "POS_REL_SX",
-//     "POS_REL_SY",
-//     "POS_REL_CX1",
-//     "POS_REL_CX2",
-//     "POS_REL_CY1",
-//     "POS_REL_CY2",
-//     "POS_REL_CTRANS1",
-//     "POS_REL_CTRANS2",
-//     "POS_REL_CCIS1",
-//     "POS_REL_CCIS2",
-//     "POS_REL_COPP"};
-
-// TODO: add player_id, rotation et triomino to params
 TPlacement *t_placement_create(unsigned int x, unsigned int y, unsigned int edge)
 {
   TPlacement *tp = t_malloc(sizeof(TPlacement));
