@@ -6,9 +6,6 @@
  * @copyright  BSD 3-Clause License
  */
 
-#include <stdlib.h>
-
-#include "test.h"
 #include "test-config.h"
 #include "set.h"
 
@@ -101,10 +98,11 @@ static void test_set_merge_multiple_elements(void)
 
 int main(void)
 {
-  RUN_TEST(test_set_merge_empty_sets);
-  RUN_TEST(test_set_merge_empty_source);
-  RUN_TEST(test_set_merge_empty_dest);
-  RUN_TEST(test_set_merge_with_duplicates);
-  RUN_TEST(test_set_merge_multiple_elements);
+  test_set_merge_empty_dest();
+  test_set_merge_empty_source();
+  test_set_merge_empty_sets();
+  test_set_merge_with_duplicates();
+  test_set_merge_multiple_elements();
+
   return EXIT_SUCCESS;
 }
