@@ -22,6 +22,11 @@
 
 // ----------------------------------------------------------------------------
 
+static default_compatibibility_strategy(const Triomino *ref, const Triomino *target)
+{
+  return false;
+}
+
 TCompatibility *t_compatibility_create(Triomino *ref)
 {
   TCompatibility *comp = t_malloc(sizeof(TCompatibility));
@@ -195,6 +200,7 @@ int t_compatibility_set_strategy(TCompatibility *comp, int context)
     comp->strategy = triomino_cc_compatible;
     break;
   default:
+    comp->strategy = default_compatibibility_strategy;
     return 1;
   }
   return 0;
