@@ -143,6 +143,7 @@ void t_placement_clear_out(TPlacement *tp)
 {
   tp->rotation = _UNDEFINED;
   tp->triomino = NULL;
+  tp->player_id = _UNDEFINED;
 }
 
 unsigned int t_placement_get_x(TPlacement *tp)
