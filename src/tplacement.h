@@ -53,7 +53,14 @@ TPlacement *t_placement_create_full(
     unsigned char rotation,
     Triomino *triomino);
 
-TPlacement *t_placement_stage(TPlacement *dest, TPlacement *src);
+/**
+ * @brief Copies a TPlacement structure.
+ *
+ * @param dest The destination TPlacement structure.
+ * @param src The source TPlacement structure.
+ * @return The destination TPlacement structure updated.
+ */
+TPlacement *t_placement_cpy(TPlacement *dest, TPlacement *src);
 
 /**
  * @brief Destroys a TPlacement structure.

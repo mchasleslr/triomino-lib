@@ -56,14 +56,24 @@ TPlacement *t_placement_create_full(
   return tp;
 }
 
-TPlacement *t_placement_stage(TPlacement *dest, TPlacement *src)
+TPlacement *t_placement_cpy(TPlacement *dest, TPlacement *src)
 {
-  if (dest)
+  if (src)
   {
-    free(dest);
+    if (!dest)
+    {
+      dest = t_placement_create_full(src->player_id, t_placement_get_x(src), t_placement_get_y(src), t_placement_get_edge(src), src->rotation, src->triomino);
+    }
+    else
+    {
+      dest->player_id = src->player_id;
+      dest->coords[0] = t_placement_get_x(src);
+      dest->coords[1] = t_placement_get_y(src);
+      dest->coords[2] = t_placement_get_edge(src);
+      dest->rotation = src->rotation;
+      dest->triomino = src->triomino;
+    }
   }
-
-  dest = t_placement_create_full(src->player_id, t_placement_get_x(src), t_placement_get_y(src), t_placement_get_edge(src), src->rotation, src->triomino);
 
   return dest;
 }
