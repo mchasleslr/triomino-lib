@@ -103,7 +103,7 @@ char *t_placement_to_string(TPlacement *tp)
     bytes += snprintf(str + bytes, sizeof str - bytes, "+");
   }
 
-  bytes += snprintf(str + bytes, sizeof str - bytes, "(%d, %d),", t_placement_get_x(tp), t_placement_get_y(tp));
+  bytes += snprintf(str + bytes, sizeof str - bytes, "(%d, %d), ", t_placement_get_x(tp), t_placement_get_y(tp));
 
   if (!t_placement_empty(tp))
   {
