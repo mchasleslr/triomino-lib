@@ -11,6 +11,7 @@
 
 #include <stdbool.h>
 #include <stdio.h>
+#include "tconstants.h"
 
 /**
  * @brief Triomino type
@@ -148,10 +149,11 @@ extern bool triomino_is_single(const Triomino *triomino);
 /**
  * @brief Get the value of a triomino.
  * @param triomino The triomino.
+ * @param option the option/flag that implies context of function
  * @return The value of the triomino.
  * @note The value of a triomino is the sum of the values of its corners.
  */
-extern unsigned char triomino_get_value(const Triomino *triomino);
+extern unsigned char triomino_get_value(const Triomino *triomino, int option);
 
 /**
  * @brief Check if two triominos are aa compatible.

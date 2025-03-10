@@ -77,21 +77,18 @@ void t_grid_display(TGrid *grid)
 unsigned int t_grid_get_size(TGrid *grid)
 {
   assert("t_grid_get_size: NULL pointer" && grid);
-
   return grid->size;
 }
 
 TPlacement *t_grid_get_placement(TGrid *grid, unsigned int x, unsigned int y, unsigned int edge)
 {
   assert("t_grid_get_placement: NULL pointer" && grid);
-
   return grid->placements[y][2 * x + edge];
 }
 
 TPlacement *t_grid_fill_placement(TGrid *grid, unsigned int x, unsigned int y, unsigned char edge, unsigned char rotation, Triomino *tile)
 {
   TPlacement *placement = t_grid_get_placement(grid, x, y, edge);
-
   t_placement_set_rotation(placement, rotation);
   t_placement_set_triomino(placement, tile);
 
