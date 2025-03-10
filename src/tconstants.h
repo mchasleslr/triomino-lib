@@ -185,4 +185,22 @@
  */
 #define ADJ_FULL 0x08
 
+
+/**
+ * @section Game options
+ * 
+ *          Options to be added to functions to enable their use in the context of game initialisation/startup.
+ *       
+ */
+
+/**
+  * @brief This option is to keep the context of a game already running.
+  */
+ #define DEFAULT 0
+
+ /**
+  * @brief This option is to imply it follows startup rules and returns values related to game initialisation.
+  */
+ #define GAME_START 1
+
 #endif // _TCONSTANTS_H
