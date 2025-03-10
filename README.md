@@ -57,5 +57,3 @@ $ make package_source
 
 + [Maxime Chasles](https://github.com/mchasleslr)
 + [Ryan Heuvel](https://github.com/BuffGenji)
-
-test
