@@ -22,8 +22,20 @@
 
 // ----------------------------------------------------------------------------
 
-static default_compatibibility_strategy(const Triomino* ref,
-                                        const Triomino* target) {
+/**
+ * @brief Default compatibility strategy.
+ *
+ * This fallback function is used when no strategy is set.
+ * It should never be called.
+ *
+ * @param ref The reference triomino.
+ * @param target The target triomino.
+ * @return false
+ */
+static bool default_compatibibility_strategy(const Triomino* ref,
+                                             const Triomino* target) {
+  (void)ref;     // unused
+  (void)target;  // unused
   return false;
 }
 
