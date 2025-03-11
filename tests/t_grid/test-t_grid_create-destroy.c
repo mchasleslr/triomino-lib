@@ -1,3 +1,11 @@
+/**
+ * @file       test-t_grid_create-destroy.c
+ *
+ * @author     Maxime Chasles
+ * @date       2025
+ * @copyright  BSD 3-Clause License
+ */
+
 #include "test-config.h"
 #include "tgrid.h"
 #include "triomino.inc"
