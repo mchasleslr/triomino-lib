@@ -21,4 +21,4 @@
  */
 #define ARRAY_LEN(t) (sizeof(t) / sizeof(t[0]))
 
-#endif // _TUTILS_H
+#endif  // _TUTILS_H

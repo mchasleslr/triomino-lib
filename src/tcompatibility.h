@@ -62,6 +62,7 @@ int t_compatibility_set_strategy(TCompatibility *comp, int context);
  * @param target The target triomino.
  * @return true if the triominos are compatible, false otherwise.
  */
-bool t_compatibility_exec_strategy(TCompatibility *comp, const Triomino *target);
+bool t_compatibility_exec_strategy(TCompatibility *comp,
+                                   const Triomino *target);
 
-#endif // _TCOMPATIBILITY_H
+#endif  // _TCOMPATIBILITY_H

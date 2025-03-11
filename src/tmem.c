@@ -23,12 +23,12 @@
  * @param size The size of the memory to allocate.
  * @return A pointer to the allocated memory.
  */
-void *t_malloc(size_t size)
+void*
+t_malloc(size_t size)
 {
-  void *ptr;
+  void* ptr;
 
-  if (NULL == (ptr = malloc(size)))
-  {
+  if (NULL == (ptr = malloc(size))) {
     perror("malloc ");
     exit(EXIT_FAILURE);
   }

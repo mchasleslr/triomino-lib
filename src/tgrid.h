@@ -14,9 +14,9 @@
 #ifndef _TGRID_H
 #define _TGRID_H
 
-#include "tplacement.h"
 #include "set.h"
 #include "tmem.h"
+#include "tplacement.h"
 
 /**
  * @brief The TGrid structure represents the game grid.
@@ -64,7 +64,8 @@ unsigned int t_grid_get_size(TGrid *grid);
  * @param edge The edge.
  * @return A pointer to the TPlacement structure.
  */
-TPlacement *t_grid_get_placement(TGrid *grid, unsigned int x, unsigned int y, unsigned int edge);
+TPlacement *t_grid_get_placement(TGrid *grid, unsigned int x, unsigned int y,
+                                 unsigned int edge);
 
 /**
  * @brief Fills a placement in a TGrid structure.
@@ -77,7 +78,9 @@ TPlacement *t_grid_get_placement(TGrid *grid, unsigned int x, unsigned int y, un
  * @param tile The triomino to place.
  * @return A pointer to the TPlacement structure.
  */
-TPlacement *t_grid_fill_placement(TGrid *grid, unsigned int x, unsigned int y, unsigned char edge, unsigned char rotation, Triomino *tile);
+TPlacement *t_grid_fill_placement(TGrid *grid, unsigned int x, unsigned int y,
+                                  unsigned char edge, unsigned char rotation,
+                                  Triomino *tile);
 
 /**
  * @brief Commits a staged placement in a TGrid structure.
@@ -114,4 +117,4 @@ bool t_grid_valid_placement(TGrid *grid, TPlacement *candidate);
  */
 void t_grid_display(TGrid *grid);
 
-#endif // _TGRID_H
+#endif  // _TGRID_H

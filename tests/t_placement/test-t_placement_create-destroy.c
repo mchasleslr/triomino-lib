@@ -6,15 +6,12 @@
  * @copyright  BSD 3-Clause License
  */
 
-#include "test-config.h"
-
 #include "tconstants.h"
+#include "test-config.h"
 #include "tplacement.h"
-
 #include "triomino.inc"
 
-static void test_t_placement_create(void)
-{
+static void test_t_placement_create(void) {
   TPlacement *tp = t_placement_create(1, 2, EDGE_INF);
 
   assert(tp != NULL);
@@ -26,8 +23,7 @@ static void test_t_placement_create(void)
   t_placement_destroy(tp);
 }
 
-static void test_t_placement_create_full(void)
-{
+static void test_t_placement_create_full(void) {
   Triomino *t = triomino_create_full(0, 0, 0);
   TPlacement *tp = t_placement_create_full(1, 2, 3, EDGE_SUP, ROT_ABS_A, t);
 
@@ -43,8 +39,7 @@ static void test_t_placement_create_full(void)
   t_placement_destroy(tp);
 }
 
-int main(void)
-{
+int main(void) {
   test_t_placement_create();
   test_t_placement_create_full();
 

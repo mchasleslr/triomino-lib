@@ -15,17 +15,14 @@
 
 #include "set.h"
 #include "triomino.h"
-
 #include "triomino.inc"
 
-bool filter_triomino(void *element)
-{
+bool filter_triomino(void *element) {
   Triomino *triomino = (Triomino *)element;
   return triomino->a == 0 || triomino->b == 3;
 }
 
-int main(void)
-{
+int main(void) {
   Triomino *t1 = triomino_create_full(0, 0, 0);
   Triomino *t2 = triomino_create_full(1, 1, 1);
   Triomino *t3 = triomino_create_full(2, 2, 2);
@@ -41,15 +38,15 @@ int main(void)
   set = set_add(set, t4);
   set = set_add(set, t5);
 
-  for (iterator = set_iterator_create(set); set_iterator_has_next(iterator); iterator = set_iterator_next(iterator))
-  {
+  for (iterator = set_iterator_create(set); set_iterator_has_next(iterator);
+       iterator = set_iterator_next(iterator)) {
     printf("%s\n", triomino_to_string((Triomino *)set_iterator_get(iterator)));
   }
 
   set = set_filter(set, filter_triomino);
 
-  for (iterator = set_iterator_reset(iterator); set_iterator_has_next(iterator); iterator = set_iterator_next(iterator))
-  {
+  for (iterator = set_iterator_reset(iterator); set_iterator_has_next(iterator);
+       iterator = set_iterator_next(iterator)) {
     printf("%s\n", triomino_to_string((Triomino *)set_iterator_get(iterator)));
   }
 

@@ -6,15 +6,12 @@
  * @copyright  BSD 3-Clause License
  */
 
-#include "test-config.h"
-
 #include "tconstants.h"
+#include "test-config.h"
 #include "tplacement.h"
-
 #include "triomino.inc"
 
-static void test_suite(void)
-{
+static void test_suite(void) {
   Triomino *t1 = triomino_create_full(1, 2, 3);
   Triomino *t2 = triomino_create_full(1, 3, 5);
   Triomino *t3 = triomino_create_full(1, 1, 5);
@@ -218,8 +215,7 @@ static void test_suite(void)
   t_placement_destroy(tp24);
 }
 
-int main(void)
-{
+int main(void) {
   test_suite();
 
   return EXIT_SUCCESS;

@@ -14,14 +14,12 @@
 #include <assert.h>
 
 #include "set.h"
-
 #include "set.inc"
 
 #define _SIZEOF_SET sizeof(Set)
 #define _SIZEOF_SETNODE sizeof(SetNode)
 
-int main(void)
-{
+int main(void) {
   assert(sizeof(Set *) == __SIZEOF_POINTER__);
   assert(sizeof(SetNode *) == __SIZEOF_POINTER__);
   assert(sizeof(Set) == _SIZEOF_SET);

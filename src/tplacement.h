@@ -19,8 +19,9 @@
 /**
  * @brief The TPlacement structure represents a triomino placement on the grid.
  *
- * A placement is defined by its coordinates (x, y) and its edge (EDGE_INF or EDGE_SUP).
- * If a triomino is placed, the player id, the rotation and the triomino are also stored.
+ * A placement is defined by its coordinates (x, y) and its edge (EDGE_INF or
+ * EDGE_SUP). If a triomino is placed, the player id, the rotation and the
+ * triomino are also stored.
  */
 typedef struct _TPlacement TPlacement;
 
@@ -32,7 +33,8 @@ typedef struct _TPlacement TPlacement;
  * @param edge The edge.
  * @return A pointer to the new TPlacement structure.
  */
-TPlacement *t_placement_create(unsigned int x, unsigned int y, unsigned int edge);
+TPlacement *t_placement_create(unsigned int x, unsigned int y,
+                               unsigned int edge);
 
 /**
  * @brief Creates a new TPlacement structure with all its fields.
@@ -45,13 +47,9 @@ TPlacement *t_placement_create(unsigned int x, unsigned int y, unsigned int edge
  * @param triomino The triomino.
  * @return A pointer to the new TPlacement structure.
  */
-TPlacement *t_placement_create_full(
-    unsigned char player_id,
-    unsigned int x,
-    unsigned int y,
-    unsigned int edge,
-    unsigned char rotation,
-    Triomino *triomino);
+TPlacement *t_placement_create_full(unsigned char player_id, unsigned int x,
+                                    unsigned int y, unsigned int edge,
+                                    unsigned char rotation, Triomino *triomino);
 
 /**
  * @brief Copies a TPlacement structure.
@@ -106,7 +104,8 @@ TPlacement *t_placement_set_rotation(TPlacement *tp, unsigned char rotation);
 TPlacement *t_placement_set_triomino(TPlacement *tp, Triomino *triomino);
 
 /**
- * @brief Clears the player id, the rotation and the triomino of a TPlacement structure.
+ * @brief Clears the player id, the rotation and the triomino of a TPlacement
+ * structure.
  *
  * @note The triomino is not destroyed.
  *
@@ -187,4 +186,4 @@ bool t_placement_empty(TPlacement *tp);
  */
 bool t_placement_compatibles(TPlacement *ref, TPlacement *target);
 
-#endif // _TPLACEMENT_H
+#endif  // _TPLACEMENT_H

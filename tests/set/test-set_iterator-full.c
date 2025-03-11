@@ -15,12 +15,10 @@
 #include <assert.h>
 
 #include "set.h"
+#include "set.inc"
 #include "triomino.h"
 
-#include "set.inc"
-
-int main(void)
-{
+int main(void) {
   Set *set = set_create();
 
   Triomino *t1 = triomino_create_full(5, 5, 5);
@@ -38,17 +36,21 @@ int main(void)
   SetIterator *iterator;
   unsigned int i;
 
-  for (i = 0, iterator = set_iterator_create(set); set_iterator_has_next(iterator); i++, iterator = set_iterator_next(iterator))
-  {
-    assert("" && !strcmp(triomino_to_string((Triomino *)set_iterator_get(iterator)),
-                         triomino_to_string(triominos[i])));
+  for (i = 0, iterator = set_iterator_create(set);
+       set_iterator_has_next(iterator);
+       i++, iterator = set_iterator_next(iterator)) {
+    assert("" &&
+           !strcmp(triomino_to_string((Triomino *)set_iterator_get(iterator)),
+                   triomino_to_string(triominos[i])));
     assert("" && i == set_iterator_index(iterator));
   }
 
-  for (i = 0, iterator = set_iterator_reset(iterator); set_iterator_has_next(iterator); i++, iterator = set_iterator_next(iterator))
-  {
-    assert("" && !strcmp(triomino_to_string((Triomino *)set_iterator_get(iterator)),
-                         triomino_to_string(triominos[i])));
+  for (i = 0, iterator = set_iterator_reset(iterator);
+       set_iterator_has_next(iterator);
+       i++, iterator = set_iterator_next(iterator)) {
+    assert("" &&
+           !strcmp(triomino_to_string((Triomino *)set_iterator_get(iterator)),
+                   triomino_to_string(triominos[i])));
     assert("" && i == set_iterator_index(iterator));
   }
 

@@ -6,11 +6,10 @@
  * @copyright  BSD 3-Clause License
  */
 
-#include "test-config.h"
 #include "set.h"
+#include "test-config.h"
 
-static void test_set_merge_empty_sets(void)
-{
+static void test_set_merge_empty_sets(void) {
   Set *dest = set_create();
   Set *src = set_create();
 
@@ -22,8 +21,7 @@ static void test_set_merge_empty_sets(void)
   set_destroy(result);
 }
 
-static void test_set_merge_empty_source(void)
-{
+static void test_set_merge_empty_source(void) {
   Set *dest = set_create();
   Set *src = set_create();
   int val = 42;
@@ -38,8 +36,7 @@ static void test_set_merge_empty_source(void)
   set_destroy(result);
 }
 
-static void test_set_merge_empty_dest(void)
-{
+static void test_set_merge_empty_dest(void) {
   Set *dest = set_create();
   Set *src = set_create();
   int val = 42;
@@ -54,15 +51,14 @@ static void test_set_merge_empty_dest(void)
   set_destroy(result);
 }
 
-static void test_set_merge_with_duplicates(void)
-{
+static void test_set_merge_with_duplicates(void) {
   Set *dest = set_create();
   Set *src = set_create();
   int val1 = 42;
   int val2 = 43;
 
   set_add(dest, &val1);
-  set_add(src, &val1); // Duplicate
+  set_add(src, &val1);  // Duplicate
   set_add(src, &val2);
 
   Set *result = set_merge(dest, src);
@@ -75,8 +71,7 @@ static void test_set_merge_with_duplicates(void)
   set_destroy(result);
 }
 
-static void test_set_merge_multiple_elements(void)
-{
+static void test_set_merge_multiple_elements(void) {
   Set *dest = set_create();
   Set *src = set_create();
   int val1 = 42, val2 = 43, val3 = 44;
@@ -96,8 +91,7 @@ static void test_set_merge_multiple_elements(void)
   set_destroy(result);
 }
 
-int main(void)
-{
+int main(void) {
   test_set_merge_empty_dest();
   test_set_merge_empty_source();
   test_set_merge_empty_sets();

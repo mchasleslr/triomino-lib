@@ -15,4 +15,4 @@
 
 void *t_malloc(size_t size);
 
-#endif // _TMEM_H
+#endif  // _TMEM_H

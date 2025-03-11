@@ -14,11 +14,9 @@
 #include <assert.h>
 
 #include "set.h"
-
 #include "set.inc"
 
-int main(void)
-{
+int main(void) {
   int a = 1;
   int b = 2;
   int c = 3;

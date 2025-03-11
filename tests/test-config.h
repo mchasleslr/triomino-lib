@@ -16,9 +16,9 @@
 #endif
 
 #include <assert.h>
+#include <stdbool.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <stdbool.h>
 
-#endif // _TEST_CONFIG_H
+#endif  // _TEST_CONFIG_H

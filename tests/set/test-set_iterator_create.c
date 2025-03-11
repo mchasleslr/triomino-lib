@@ -14,11 +14,9 @@
 #include <assert.h>
 
 #include "set.h"
-
 #include "set.inc"
 
-int main(void)
-{
+int main(void) {
   Set *set = set_create();
 
   SetIterator *iterator = set_iterator_create(set);

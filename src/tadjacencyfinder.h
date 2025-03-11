@@ -16,7 +16,8 @@
 #include "tgrid.h"
 
 /**
- * @brief The TAdjacencyFinder structure is used to find the adjacents of a placement.
+ * @brief The TAdjacencyFinder structure is used to find the adjacents of a
+ * placement.
  *
  *        It is define by a grid and a reference placement.
  *        The adjacents are found by a strategy depending of the context.
@@ -29,7 +30,8 @@ typedef struct _TAdjacencyFinder TAdjacencyFinder;
  *        This type is used to define the adjacency strategy.
  *        TODO: is this really useful?
  */
-typedef bool (*adjacency_strategy)(TGrid *, unsigned int, unsigned int, unsigned char);
+typedef bool (*adjacency_strategy)(TGrid *, unsigned int, unsigned int,
+                                   unsigned char);
 
 /**
  * @brief Creates a new TAdjacencyFinder structure.
@@ -54,7 +56,8 @@ void t_adjacency_destroy(TAdjacencyFinder *finder);
  * @param context The context of the strategy.
  * @return The TAdjacencyFinder structure updated.
  */
-TAdjacencyFinder *t_adjacency_finder_set_strategy(TAdjacencyFinder *finder, int context);
+TAdjacencyFinder *t_adjacency_finder_set_strategy(TAdjacencyFinder *finder,
+                                                  int context);
 
 /**
  * @brief Executes the adjacency strategy of a TAdjacencyFinder structure.
@@ -64,4 +67,4 @@ TAdjacencyFinder *t_adjacency_finder_set_strategy(TAdjacencyFinder *finder, int 
  */
 TPlacement *t_adjacency_finder_exec_strategy(TAdjacencyFinder *finder);
 
-#endif // _TADJACENCYFINDER_H
+#endif  // _TADJACENCYFINDER_H

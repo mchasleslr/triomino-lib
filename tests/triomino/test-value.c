@@ -16,8 +16,7 @@
 #include "triomino.h"
 #include "triomino.inc"
 
-int main(void)
-{
+int main(void) {
   triomino_init();
   {
     Triomino *tr_xxx = triomino_create_full(1, 1, 1);

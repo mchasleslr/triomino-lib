@@ -14,11 +14,9 @@
 #include <assert.h>
 
 #include "set.h"
-
 #include "set.inc"
 
-int main(void)
-{
+int main(void) {
   assert(sizeof(SetIterator *) == __SIZEOF_POINTER__);
   assert(sizeof(SetIterator) == 24);
 

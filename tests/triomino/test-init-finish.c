@@ -16,8 +16,7 @@
 #include "triomino.h"
 #include "triomino.inc"
 
-int main(void)
-{
+int main(void) {
   assert(triomino_init());
   assert(triomino_init());
   assert(triomino_init());

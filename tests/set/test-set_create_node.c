@@ -14,11 +14,9 @@
 #include <assert.h>
 
 #include "set.h"
-
 #include "set.inc"
 
-int main(void)
-{
+int main(void) {
   int n = 1;
 
   SetNode *node = set_create_node(&n);

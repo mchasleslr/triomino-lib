@@ -6,23 +6,14 @@
  * @copyright  BSD 3-Clause License
  */
 
-#include "test-config.h"
-
 #include "tconstants.h"
+#include "test-config.h"
 #include "tplacement.h"
-
 #include "triomino.inc"
 
-static void test_with_non_null_dest()
-{
+static void test_with_non_null_dest() {
   Triomino *t1 = triomino_create_full(1, 2, 3);
-  TPlacement *src = t_placement_create_full(
-      1,
-      20,
-      30,
-      EDGE_INF,
-      ROT_ABS_A,
-      t1);
+  TPlacement *src = t_placement_create_full(1, 20, 30, EDGE_INF, ROT_ABS_A, t1);
 
   TPlacement *dest = t_placement_create(0, 0, EDGE_SUP);
 
@@ -40,16 +31,9 @@ static void test_with_non_null_dest()
   free(dest);
 }
 
-static void test_with_null_dest()
-{
+static void test_with_null_dest() {
   Triomino *t1 = triomino_create_full(1, 2, 3);
-  TPlacement *src = t_placement_create_full(
-      1,
-      20,
-      30,
-      EDGE_INF,
-      ROT_ABS_A,
-      t1);
+  TPlacement *src = t_placement_create_full(1, 20, 30, EDGE_INF, ROT_ABS_A, t1);
 
   TPlacement *dest = NULL;
 
@@ -67,8 +51,7 @@ static void test_with_null_dest()
   free(dest);
 }
 
-static void test_with_null_src()
-{
+static void test_with_null_src() {
   TPlacement *src = NULL;
 
   TPlacement *dest = t_placement_create(0, 0, EDGE_SUP);
@@ -86,8 +69,7 @@ static void test_with_null_src()
   free(dest);
 }
 
-int main(void)
-{
+int main(void) {
   test_with_non_null_dest();
   test_with_null_dest();
   test_with_null_src();

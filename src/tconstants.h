@@ -185,4 +185,4 @@
  */
 #define ADJ_FULL 0x08
 
-#endif // _TCONSTANTS_H
+#endif  // _TCONSTANTS_H

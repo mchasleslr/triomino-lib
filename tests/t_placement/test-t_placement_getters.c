@@ -6,15 +6,12 @@
  * @copyright  BSD 3-Clause License
  */
 
-#include "test-config.h"
-
 #include "tconstants.h"
+#include "test-config.h"
 #include "tplacement.h"
-
 #include "triomino.inc"
 
-static void test_t_placement_get_x(void)
-{
+static void test_t_placement_get_x(void) {
   TPlacement *tp = t_placement_create(1, 2, EDGE_INF);
 
   assert(t_placement_get_x(tp) == 1);
@@ -22,8 +19,7 @@ static void test_t_placement_get_x(void)
   t_placement_destroy(tp);
 }
 
-static void test_t_placement_get_y(void)
-{
+static void test_t_placement_get_y(void) {
   TPlacement *tp = t_placement_create(1, 2, EDGE_INF);
 
   assert(t_placement_get_y(tp) == 2);
@@ -31,8 +27,7 @@ static void test_t_placement_get_y(void)
   t_placement_destroy(tp);
 }
 
-static void test_t_placement_get_edge(void)
-{
+static void test_t_placement_get_edge(void) {
   TPlacement *tp = t_placement_create(1, 2, EDGE_INF);
 
   assert(t_placement_get_edge(tp) == EDGE_INF);
@@ -40,8 +35,7 @@ static void test_t_placement_get_edge(void)
   t_placement_destroy(tp);
 }
 
-static void test_t_placement_get_rotation(void)
-{
+static void test_t_placement_get_rotation(void) {
   TPlacement *tp = t_placement_create_full(1, 2, 3, EDGE_SUP, ROT_ABS_A, NULL);
 
   assert(t_placement_get_rotation(tp) == ROT_ABS_A);
@@ -49,8 +43,7 @@ static void test_t_placement_get_rotation(void)
   t_placement_destroy(tp);
 }
 
-static void test_t_placement_get_player_id(void)
-{
+static void test_t_placement_get_player_id(void) {
   TPlacement *tp = t_placement_create_full(1, 2, 3, EDGE_SUP, ROT_ABS_A, NULL);
 
   assert(t_placement_get_player_id(tp) == 1);
@@ -58,8 +51,7 @@ static void test_t_placement_get_player_id(void)
   t_placement_destroy(tp);
 }
 
-static void test_t_placement_get_triomino(void)
-{
+static void test_t_placement_get_triomino(void) {
   Triomino *t = triomino_create_full(0, 0, 0);
   TPlacement *tp = t_placement_create_full(1, 2, 3, EDGE_SUP, ROT_ABS_A, t);
 
@@ -68,8 +60,7 @@ static void test_t_placement_get_triomino(void)
   t_placement_destroy(tp);
 }
 
-static void test_t_placement_empty(void)
-{
+static void test_t_placement_empty(void) {
   TPlacement *tp = t_placement_create(1, 2, EDGE_INF);
 
   assert(t_placement_empty(tp));
@@ -77,8 +68,7 @@ static void test_t_placement_empty(void)
   t_placement_destroy(tp);
 }
 
-int main(void)
-{
+int main(void) {
   test_t_placement_get_x();
   test_t_placement_get_y();
   test_t_placement_get_edge();

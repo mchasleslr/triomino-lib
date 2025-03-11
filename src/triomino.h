@@ -53,7 +53,8 @@ extern bool triomino_finish(void);
  * @pre a <= b
  * @pre b <= c
  */
-extern Triomino *triomino_fill_full(Triomino *triomino, unsigned char a, unsigned char b, unsigned char c);
+extern Triomino *triomino_fill_full(Triomino *triomino, unsigned char a,
+                                    unsigned char b, unsigned char c);
 /**
  * @brief Reset a triomino.
  * @param triomino The triomino to reset.
@@ -73,7 +74,8 @@ extern Triomino *triomino_reset(Triomino *triomino);
  * @pre a <= b
  * @pre b <= c
  */
-extern Triomino *triomino_create_full(unsigned char a, unsigned char b, unsigned char c);
+extern Triomino *triomino_create_full(unsigned char a, unsigned char b,
+                                      unsigned char c);
 /**
  * @brief Create a triomino with default values.
  * @return The triomino created.
@@ -161,7 +163,8 @@ extern unsigned char triomino_get_value(const Triomino *triomino);
  * @note The triominos are compatible if the a corner of triomino1
  *       is equal to the a corner of triomino2.
  */
-extern bool triomino_aa_compatible(const Triomino *triomino1, const Triomino *triomino2);
+extern bool triomino_aa_compatible(const Triomino *triomino1,
+                                   const Triomino *triomino2);
 /**
  * @brief Check if two triominos are ab compatible.
  * @param triomino1 The first triomino.
@@ -170,7 +173,8 @@ extern bool triomino_aa_compatible(const Triomino *triomino1, const Triomino *tr
  * @note The triominos are compatible if the a corner of triomino1
  *       is equal to the b corner of triomino2.
  */
-extern bool triomino_ab_compatible(const Triomino *triomino1, const Triomino *triomino2);
+extern bool triomino_ab_compatible(const Triomino *triomino1,
+                                   const Triomino *triomino2);
 /**
  * @brief Check if two triominos are ac compatible.
  * @param triomino1 The first triomino.
@@ -179,7 +183,8 @@ extern bool triomino_ab_compatible(const Triomino *triomino1, const Triomino *tr
  * @note The triominos are compatible if the a corner of triomino1
  *       is equal to the c corner of triomino2.
  */
-extern bool triomino_ac_compatible(const Triomino *triomino1, const Triomino *triomino2);
+extern bool triomino_ac_compatible(const Triomino *triomino1,
+                                   const Triomino *triomino2);
 /**
  * @brief Check if two triominos are ba compatible.
  * @param triomino1 The first triomino.
@@ -188,7 +193,8 @@ extern bool triomino_ac_compatible(const Triomino *triomino1, const Triomino *tr
  * @note The triominos are compatible if the b corner of triomino1
  *       is equal to the a corner of triomino2.
  */
-extern bool triomino_ba_compatible(const Triomino *triomino1, const Triomino *triomino2);
+extern bool triomino_ba_compatible(const Triomino *triomino1,
+                                   const Triomino *triomino2);
 /**
  * @brief Check if two triominos are bb compatible.
  * @param triomino1 The first triomino.
@@ -197,7 +203,8 @@ extern bool triomino_ba_compatible(const Triomino *triomino1, const Triomino *tr
  * @note The triominos are compatible if the b corner of triomino1
  *       is equal to the b corner of triomino2.
  */
-extern bool triomino_bb_compatible(const Triomino *triomino1, const Triomino *triomino2);
+extern bool triomino_bb_compatible(const Triomino *triomino1,
+                                   const Triomino *triomino2);
 /**
  * @brief Check if two triominos are bc compatible.
  * @param triomino1 The first triomino.
@@ -206,7 +213,8 @@ extern bool triomino_bb_compatible(const Triomino *triomino1, const Triomino *tr
  * @note The triominos are compatible if the b corner of triomino1
  *       is equal to the c corner of triomino2.
  */
-extern bool triomino_bc_compatible(const Triomino *triomino1, const Triomino *triomino2);
+extern bool triomino_bc_compatible(const Triomino *triomino1,
+                                   const Triomino *triomino2);
 /**
  * @brief Check if two triominos are ca compatible.
  * @param triomino1 The first triomino.
@@ -215,7 +223,8 @@ extern bool triomino_bc_compatible(const Triomino *triomino1, const Triomino *tr
  * @note The triominos are compatible if the c corner of triomino1
  *       is equal to the a corner of triomino2.
  */
-extern bool triomino_ca_compatible(const Triomino *triomino1, const Triomino *triomino2);
+extern bool triomino_ca_compatible(const Triomino *triomino1,
+                                   const Triomino *triomino2);
 /**
  * @brief Check if two triominos are cb compatible.
  * @param triomino1 The first triomino.
@@ -224,7 +233,8 @@ extern bool triomino_ca_compatible(const Triomino *triomino1, const Triomino *tr
  * @note The triominos are compatible if the c corner of triomino1
  *       is equal to the b corner of triomino2.
  */
-extern bool triomino_cb_compatible(const Triomino *triomino1, const Triomino *triomino2);
+extern bool triomino_cb_compatible(const Triomino *triomino1,
+                                   const Triomino *triomino2);
 /**
  * @brief Check if two triominos are cc compatible.
  * @param triomino1 The first triomino.
@@ -233,7 +243,8 @@ extern bool triomino_cb_compatible(const Triomino *triomino1, const Triomino *tr
  * @note The triominos are compatible if the c corner of triomino1
  *       is equal to the c corner of triomino2.
  */
-extern bool triomino_cc_compatible(const Triomino *triomino1, const Triomino *triomino2);
+extern bool triomino_cc_compatible(const Triomino *triomino1,
+                                   const Triomino *triomino2);
 /**
  * @brief Check if two triominos are ab-cb compatible.
  * @param triomino1 The first triomino.
@@ -242,7 +253,8 @@ extern bool triomino_cc_compatible(const Triomino *triomino1, const Triomino *tr
  * @note The triominos are compatible if they have two sides equal.
  *       The sides are ab for triomino1 and cb for triomino2.
  */
-extern bool triomino_ab_cb_compatible(const Triomino *triomino1, const Triomino *triomino2);
+extern bool triomino_ab_cb_compatible(const Triomino *triomino1,
+                                      const Triomino *triomino2);
 /**
  * @brief Check if two triominos are ab-ba compatible.
  * @param triomino1 The first triomino.
@@ -251,7 +263,8 @@ extern bool triomino_ab_cb_compatible(const Triomino *triomino1, const Triomino 
  * @note The triominos are compatible if they have two sides equal.
  *       The sides are ab for triomino1 and ba for triomino2.
  */
-extern bool triomino_ab_ba_compatible(const Triomino *triomino1, const Triomino *triomino2);
+extern bool triomino_ab_ba_compatible(const Triomino *triomino1,
+                                      const Triomino *triomino2);
 /**
  * @brief Check if two triominos are ab-ac compatible.
  * @param triomino1 The first triomino.
@@ -260,7 +273,8 @@ extern bool triomino_ab_ba_compatible(const Triomino *triomino1, const Triomino 
  * @note The triominos are compatible if they have two sides equal.
  *       The sides are ab for triomino1 and ac for triomino2.
  */
-extern bool triomino_ab_ac_compatible(const Triomino *triomino1, const Triomino *triomino2);
+extern bool triomino_ab_ac_compatible(const Triomino *triomino1,
+                                      const Triomino *triomino2);
 /**
  * @brief Check if two triominos are bc-cb compatible.
  * @param triomino1 The first triomino.
@@ -269,7 +283,8 @@ extern bool triomino_ab_ac_compatible(const Triomino *triomino1, const Triomino 
  * @note The triominos are compatible if they have two sides equal.
  *       The sides are bc for triomino1 and cb for triomino2.
  */
-extern bool triomino_bc_cb_compatible(const Triomino *triomino1, const Triomino *triomino2);
+extern bool triomino_bc_cb_compatible(const Triomino *triomino1,
+                                      const Triomino *triomino2);
 /**
  * @brief Check if two triominos are bc-ba compatible.
  * @param triomino1 The first triomino.
@@ -278,7 +293,8 @@ extern bool triomino_bc_cb_compatible(const Triomino *triomino1, const Triomino 
  * @note The triominos are compatible if they have two sides equal.
  *       The sides are bc for triomino1 and ba for triomino2.
  */
-extern bool triomino_bc_ba_compatible(const Triomino *triomino1, const Triomino *triomino2);
+extern bool triomino_bc_ba_compatible(const Triomino *triomino1,
+                                      const Triomino *triomino2);
 /**
  * @brief Check if two triominos are bc-ac compatible.
  * @param triomino1 The first triomino.
@@ -287,7 +303,8 @@ extern bool triomino_bc_ba_compatible(const Triomino *triomino1, const Triomino 
  * @note The triominos are compatible if they have two sides equal.
  *       The sides are bc for triomino1 and ac for triomino2.
  */
-extern bool triomino_bc_ac_compatible(const Triomino *triomino1, const Triomino *triomino2);
+extern bool triomino_bc_ac_compatible(const Triomino *triomino1,
+                                      const Triomino *triomino2);
 /**
  * @brief Check if two triominos are ca-cb compatible.
  * @param triomino1 The first triomino.
@@ -296,7 +313,8 @@ extern bool triomino_bc_ac_compatible(const Triomino *triomino1, const Triomino 
  * @note The triominos are compatible if they have two sides equal.
  *       The sides are ca for triomino1 and cb for triomino2.
  */
-extern bool triomino_ca_cb_compatible(const Triomino *triomino1, const Triomino *triomino2);
+extern bool triomino_ca_cb_compatible(const Triomino *triomino1,
+                                      const Triomino *triomino2);
 /**
  * @brief Check if two triominos are ca-ba compatible.
  * @param triomino1 The first triomino.
@@ -305,7 +323,8 @@ extern bool triomino_ca_cb_compatible(const Triomino *triomino1, const Triomino 
  * @note The triominos are compatible if they have two sides equal.
  *       The sides are ca for triomino1 and ba for triomino2.
  */
-extern bool triomino_ca_ba_compatible(const Triomino *triomino1, const Triomino *triomino2);
+extern bool triomino_ca_ba_compatible(const Triomino *triomino1,
+                                      const Triomino *triomino2);
 /**
  * @brief Check if two triominos are ca-ac compatible.
  * @param triomino1 The first triomino.
@@ -314,7 +333,8 @@ extern bool triomino_ca_ba_compatible(const Triomino *triomino1, const Triomino 
  * @note The triominos are compatible if they have two sides equal.
  *       The sides are ca for triomino1 and ac for triomino2.
  */
-extern bool triomino_ca_ac_compatible(const Triomino *triomino1, const Triomino *triomino2);
+extern bool triomino_ca_ac_compatible(const Triomino *triomino1,
+                                      const Triomino *triomino2);
 
 /**
  * @brief Write a triomino to a stream.
@@ -338,4 +358,4 @@ extern Triomino *triomino_fread(Triomino *triomino, FILE *stream);
  */
 extern const char *triomino_to_string(const Triomino *triomino);
 
-#endif // TRIOMINO_H_
+#endif  // TRIOMINO_H_

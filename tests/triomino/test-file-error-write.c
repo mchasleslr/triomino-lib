@@ -17,8 +17,7 @@
 #include "triomino.h"
 #include "triomino.inc"
 
-int main(void)
-{
+int main(void) {
   triomino_init();
   {
     FILE *stream = fopen("empty", "w");

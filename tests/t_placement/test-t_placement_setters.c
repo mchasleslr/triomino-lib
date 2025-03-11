@@ -6,15 +6,12 @@
  * @copyright  BSD 3-Clause License
  */
 
-#include "test-config.h"
-
 #include "tconstants.h"
+#include "test-config.h"
 #include "tplacement.h"
-
 #include "triomino.inc"
 
-static void test_t_placement_set_player_id(void)
-{
+static void test_t_placement_set_player_id(void) {
   TPlacement *tp = t_placement_create(1, 2, EDGE_INF);
 
   tp = t_placement_set_player_id(tp, 1);
@@ -25,8 +22,7 @@ static void test_t_placement_set_player_id(void)
   t_placement_destroy(tp);
 }
 
-static void test_t_placement_set_rotation(void)
-{
+static void test_t_placement_set_rotation(void) {
   TPlacement *tp = t_placement_create(1, 2, EDGE_INF);
 
   tp = t_placement_set_rotation(tp, ROT_ABS_A);
@@ -37,8 +33,7 @@ static void test_t_placement_set_rotation(void)
   t_placement_destroy(tp);
 }
 
-static void test_t_placement_set_triomino(void)
-{
+static void test_t_placement_set_triomino(void) {
   Triomino *t = triomino_create_full(0, 0, 0);
   TPlacement *tp = t_placement_create(1, 2, EDGE_INF);
 
@@ -50,8 +45,7 @@ static void test_t_placement_set_triomino(void)
   t_placement_destroy(tp);
 }
 
-static void test_t_placement_clear_out(void)
-{
+static void test_t_placement_clear_out(void) {
   Triomino *t = triomino_create_full(0, 0, 0);
   TPlacement *tp = t_placement_create_full(1, 2, 3, EDGE_SUP, ROT_ABS_A, t);
 
@@ -66,8 +60,7 @@ static void test_t_placement_clear_out(void)
   triomino_destroy(t);
 }
 
-int main(void)
-{
+int main(void) {
   test_t_placement_set_player_id();
   test_t_placement_set_rotation();
   test_t_placement_set_triomino();

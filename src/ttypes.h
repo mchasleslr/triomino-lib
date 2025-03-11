@@ -17,4 +17,4 @@
 
 #include "triomino.inc"
 
-#endif // _TTYPES_H
+#endif  // _TTYPES_H

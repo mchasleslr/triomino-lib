@@ -81,7 +81,8 @@ extern Set *set_merge(Set *dest, Set *src);
  *
  * @param set The set to remove the element from.
  * @param element The element to remove.
- * @return The set after the removal. (If the element is not present, the set is unchanged.)
+ * @return The set after the removal. (If the element is not present, the set is
+ * unchanged.)
  */
 extern Set *set_remove(Set *set, void *element);
 
