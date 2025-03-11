@@ -87,6 +87,16 @@ extern Set *set_merge(Set *dest, Set *src);
 extern Set *set_remove(Set *set, void *element);
 
 /**
+ * @brief Pop a random element from a set.
+ *
+ * @details The element is removed from the set.
+ *
+ * @param set The set to pop the element from.
+ * @return The element popped or NULL if the set is empty.
+ */
+extern void *set_pop_random(Set *set);
+
+/**
  * @brief Check if a set contains an element.
  *
  * @param set The set to check.
@@ -182,4 +192,4 @@ extern void *set_iterator_get(SetIterator *iterator);
  */
 extern unsigned int set_iterator_index(SetIterator *iterator);
 
-#endif
+#endif  // _SET_H

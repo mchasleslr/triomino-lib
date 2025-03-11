@@ -13,6 +13,7 @@
 #include <stdlib.h>
 
 #include "set.inc"
+#include "trand.h"
 
 #define _SIZEOF_SET sizeof(Set)
 #define _SIZEOF_SETNODE sizeof(SetNode)
@@ -126,6 +127,26 @@ Set* set_remove(Set* set, void* element) {
   }
 
   return set;
+}
+
+void* set_pop_random(Set* set) {
+  if (set_empty(set)) {
+    return NULL;
+  }
+
+  int rand_index = t_rand_randint(0, set_size(set) - 1);
+
+  SetNode* current = set->head;
+
+  for (int i = 0; i < rand_index; i++) {
+    current = current->next;
+  }
+
+  void* data = current->data;
+
+  set = set_remove(set, data);
+
+  return data;
 }
 
 bool set_empty(Set* set) { return set->head == NULL; }
