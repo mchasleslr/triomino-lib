@@ -23,14 +23,11 @@
 // ----------------------------------------------------------------------------
 
 static default_compatibibility_strategy(const Triomino* ref,
-                                        const Triomino* target)
-{
+                                        const Triomino* target) {
   return false;
 }
 
-TCompatibility*
-t_compatibility_create(Triomino* ref)
-{
+TCompatibility* t_compatibility_create(Triomino* ref) {
   TCompatibility* comp = t_malloc(sizeof(TCompatibility));
 
   comp->ref = ref;
@@ -38,66 +35,62 @@ t_compatibility_create(Triomino* ref)
   return comp;
 }
 
-void
-t_compatibility_destroy(TCompatibility* comp)
-{
+void t_compatibility_destroy(TCompatibility* comp) {
   // Note: it doesn't destroy the ressources
   free(comp);
 }
 
 // TODO: change the return type to bool or other...
-int
-t_compatibility_set_strategy(TCompatibility* comp, int context)
-{
+int t_compatibility_set_strategy(TCompatibility* comp, int context) {
   switch (context) {
-    case (POS_REL_SXY | ROT_REL_AA): // OK
+    case (POS_REL_SXY | ROT_REL_AA):  // OK
     case (POS_REL_SX | ROT_REL_BB):
     case (POS_REL_SY | ROT_REL_CC):
       comp->strategy = triomino_bc_cb_compatible;
       break;
-    case (POS_REL_SXY | ROT_REL_AC): // OK
+    case (POS_REL_SXY | ROT_REL_AC):  // OK
     case (POS_REL_SX | ROT_REL_BA):
     case (POS_REL_SY | ROT_REL_CB):
       //
       comp->strategy = triomino_bc_ba_compatible;
       break;
-    case (POS_REL_SXY | ROT_REL_AB): // OK
+    case (POS_REL_SXY | ROT_REL_AB):  // OK
     case (POS_REL_SX | ROT_REL_BC):
     case (POS_REL_SY | ROT_REL_CA):
       //
       comp->strategy = triomino_bc_ac_compatible;
       break;
-    case (POS_REL_SXY | ROT_REL_CA): // OK
+    case (POS_REL_SXY | ROT_REL_CA):  // OK
     case (POS_REL_SX | ROT_REL_AB):
     case (POS_REL_SY | ROT_REL_BC):
       //
       comp->strategy = triomino_ab_cb_compatible;
       break;
-    case (POS_REL_SXY | ROT_REL_CC): // OK
+    case (POS_REL_SXY | ROT_REL_CC):  // OK
     case (POS_REL_SX | ROT_REL_AA):
     case (POS_REL_SY | ROT_REL_BB):
       //
       comp->strategy = triomino_ab_ba_compatible;
       break;
-    case (POS_REL_SXY | ROT_REL_CB): // OK
+    case (POS_REL_SXY | ROT_REL_CB):  // OK
     case (POS_REL_SX | ROT_REL_AC):
     case (POS_REL_SY | ROT_REL_BA):
       //
       comp->strategy = triomino_ab_ac_compatible;
       break;
-    case (POS_REL_SXY | ROT_REL_BA): // OK
+    case (POS_REL_SXY | ROT_REL_BA):  // OK
     case (POS_REL_SX | ROT_REL_CB):
     case (POS_REL_SY | ROT_REL_AC):
       //
       comp->strategy = triomino_ca_cb_compatible;
       break;
-    case (POS_REL_SXY | ROT_REL_BC): // OK
+    case (POS_REL_SXY | ROT_REL_BC):  // OK
     case (POS_REL_SX | ROT_REL_CA):
     case (POS_REL_SY | ROT_REL_AB):
       //
       comp->strategy = triomino_ca_ba_compatible;
       break;
-    case (POS_REL_SXY | ROT_REL_BB): // OK
+    case (POS_REL_SXY | ROT_REL_BB):  // OK
     case (POS_REL_SX | ROT_REL_CC):
     case (POS_REL_SY | ROT_REL_AA):
       //
@@ -209,8 +202,7 @@ t_compatibility_set_strategy(TCompatibility* comp, int context)
   return 0;
 }
 
-bool
-t_compatibility_exec_strategy(TCompatibility* comp, const Triomino* target)
-{
+bool t_compatibility_exec_strategy(TCompatibility* comp,
+                                   const Triomino* target) {
   return comp->strategy(comp->ref, target);
 }

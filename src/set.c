@@ -18,9 +18,7 @@
 #define _SIZEOF_SETNODE sizeof(SetNode)
 #define _SIZEOF_SET_ITERATOR sizeof(SetIterator)
 
-Set*
-set_create()
-{
+Set* set_create() {
   Set* set;
 
   if (NULL != (set = malloc(_SIZEOF_SET))) {
@@ -29,9 +27,7 @@ set_create()
   return set;
 }
 
-SetNode*
-set_create_node(void* element)
-{
+SetNode* set_create_node(void* element) {
   SetNode* node;
 
   if (NULL != (node = malloc(_SIZEOF_SETNODE))) {
@@ -41,9 +37,7 @@ set_create_node(void* element)
   return node;
 }
 
-Set*
-set_clear(Set* set)
-{
+Set* set_clear(Set* set) {
   SetNode* current = set->head;
 
   while (current) {
@@ -55,16 +49,12 @@ set_clear(Set* set)
   return set;
 }
 
-void
-set_destroy(Set* set)
-{
+void set_destroy(Set* set) {
   set = set_clear(set);
   free(set);
 }
 
-bool
-set_contains(Set* set, void* element)
-{
+bool set_contains(Set* set, void* element) {
   bool found = false;
   SetNode* current = set->head;
 
@@ -79,9 +69,7 @@ set_contains(Set* set, void* element)
   return found;
 }
 
-Set*
-set_add(Set* set, void* element)
-{
+Set* set_add(Set* set, void* element) {
   if (set_contains(set, element) || element == NULL) {
     return set;
   }
@@ -96,9 +84,7 @@ set_add(Set* set, void* element)
   return set;
 }
 
-Set*
-set_merge(Set* dest, Set* src)
-{
+Set* set_merge(Set* dest, Set* src) {
   SetIterator* it;
   for (it = set_iterator_create(src); set_iterator_has_next(it);
        it = set_iterator_next(it)) {
@@ -110,9 +96,7 @@ set_merge(Set* dest, Set* src)
   return dest;
 }
 
-Set*
-set_remove(Set* set, void* element)
-{
+Set* set_remove(Set* set, void* element) {
   if (set_empty(set)) {
     return set;
   }
@@ -144,15 +128,9 @@ set_remove(Set* set, void* element)
   return set;
 }
 
-bool
-set_empty(Set* set)
-{
-  return set->head == NULL;
-}
+bool set_empty(Set* set) { return set->head == NULL; }
 
-unsigned int
-set_size(Set* set)
-{
+unsigned int set_size(Set* set) {
   unsigned int size = 0;
 
   SetNode* current = set->head;
@@ -165,9 +143,7 @@ set_size(Set* set)
   return size;
 }
 
-Set*
-set_filter(Set* set, bool (*filter)(void*))
-{
+Set* set_filter(Set* set, bool (*filter)(void*)) {
   SetIterator* iterator;
   Set* to_remove = set_create();
 
@@ -193,9 +169,7 @@ set_filter(Set* set, bool (*filter)(void*))
   return set;
 }
 
-SetIterator*
-set_iterator_create(Set* set)
-{
+SetIterator* set_iterator_create(Set* set) {
   if (!set) {
     return NULL;
   }
@@ -211,24 +185,16 @@ set_iterator_create(Set* set)
   return iterator;
 }
 
-void
-set_iterator_destroy(SetIterator* iterator)
-{
-  free(iterator);
-}
+void set_iterator_destroy(SetIterator* iterator) { free(iterator); }
 
-bool
-set_iterator_has_next(SetIterator* iterator)
-{
+bool set_iterator_has_next(SetIterator* iterator) {
   if (!iterator) {
     return false;
   }
   return NULL != iterator->current;
 }
 
-SetIterator*
-set_iterator_next(SetIterator* iterator)
-{
+SetIterator* set_iterator_next(SetIterator* iterator) {
   if (set_iterator_has_next(iterator)) {
     iterator->current = iterator->current->next;
     iterator->index++;
@@ -236,22 +202,16 @@ set_iterator_next(SetIterator* iterator)
   return iterator;
 }
 
-SetIterator*
-set_iterator_reset(SetIterator* iterator)
-{
+SetIterator* set_iterator_reset(SetIterator* iterator) {
   iterator->current = iterator->set->head;
   iterator->index = 0;
   return iterator;
 }
 
-void*
-set_iterator_get(SetIterator* iterator)
-{
+void* set_iterator_get(SetIterator* iterator) {
   return iterator->current->data;
 }
 
-unsigned int
-set_iterator_index(SetIterator* iterator)
-{
+unsigned int set_iterator_index(SetIterator* iterator) {
   return iterator->index;
 }

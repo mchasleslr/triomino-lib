@@ -12,7 +12,7 @@
 
 #include "tmem.h"
 
-#include <stdio.h> // perror
+#include <stdio.h>  // perror
 #include <stdlib.h>
 
 // ----------------------------------------------------------------------------
@@ -23,9 +23,7 @@
  * @param size The size of the memory to allocate.
  * @return A pointer to the allocated memory.
  */
-void*
-t_malloc(size_t size)
-{
+void* t_malloc(size_t size) {
   void* ptr;
 
   if (NULL == (ptr = malloc(size))) {
