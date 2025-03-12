@@ -51,5 +51,5 @@ jobs:
       - name: Coveralls
         uses: coverallsapp/github-action@v2
         with:
-          file: ${{github.workspace}}/build/coverage.info
           github-token: ${{secrets.COVERALLS_TOKEN}}
+          file: ${{github.workspace}}/build/coverage.info
