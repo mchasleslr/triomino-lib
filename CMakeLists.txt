@@ -96,3 +96,6 @@ install(
   FILES ${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}Config.cmake
   DESTINATION cmake
 )
+
+find_package(Coverage)
+enable_coverage()
