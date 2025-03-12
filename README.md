@@ -1,6 +1,6 @@
 # triomino-lib
 
-[![Tests](https://github.com/mchasleslr/triomino-lib/actions/workflows/ci.yml/badge.svg)](https://github.com/mchasleslr/triomino-lib/actions/workflows/ci.yml) [![Coverage Status](https://coveralls.io/repos/github/mchasleslr/triomino-lib/badge.svg?branch=main)](https://coveralls.io/github/votre-username/triomino-lib?branch=main)
+[![Tests](https://github.com/mchasleslr/triomino-lib/actions/workflows/ci.yml/badge.svg)](https://github.com/mchasleslr/triomino-lib/actions/workflows/ci.yml) [![Coverage Status](https://coveralls.io/repos/github/mchasleslr/triomino-lib/badge.svg?branch=main)](https://coveralls.io/github/mchasleslr/triomino-lib?branch=main)
 
 C library for creating a simplified version of the Triomino game.
 
